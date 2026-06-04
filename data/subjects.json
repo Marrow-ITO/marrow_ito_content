@@ -1,0 +1,199 @@
+{
+  "source": "medmcqa",
+  "taxonomy": "NEET-PG 2026",
+  "extracted_at": "2026-06-04T02:44:09.402597+00:00",
+  "total_subjects": 19,
+  "total_mcqs": 170839,
+  "skipped": {
+    "reason": "not part of NEET-PG syllabus or unclassified",
+    "by_source": [
+      {
+        "name": "Dental",
+        "mcq_count": 8938
+      },
+      {
+        "name": "Unknown",
+        "mcq_count": 3045
+      }
+    ],
+    "total_mcqs": 11983
+  },
+  "unmapped": {
+    "reason": "source subject_name not present in SUBJECT_MAP",
+    "by_source": [],
+    "total_mcqs": 0
+  },
+  "subjects": [
+    {
+      "name": "Anatomy",
+      "category": "Pre-Clinical",
+      "mcq_count": 14560,
+      "source_subjects": [
+        "Anatomy"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Physiology",
+      "category": "Pre-Clinical",
+      "mcq_count": 8830,
+      "source_subjects": [
+        "Physiology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Biochemistry",
+      "category": "Pre-Clinical",
+      "mcq_count": 8282,
+      "source_subjects": [
+        "Biochemistry"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Pathology",
+      "category": "Para-Clinical",
+      "mcq_count": 14884,
+      "source_subjects": [
+        "Pathology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Pharmacology",
+      "category": "Para-Clinical",
+      "mcq_count": 13758,
+      "source_subjects": [
+        "Pharmacology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Community Medicine",
+      "category": "Para-Clinical",
+      "mcq_count": 11882,
+      "source_subjects": [
+        "Social & Preventive Medicine"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Microbiology",
+      "category": "Para-Clinical",
+      "mcq_count": 11314,
+      "source_subjects": [
+        "Microbiology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Forensic Medicine",
+      "category": "Para-Clinical",
+      "mcq_count": 5900,
+      "source_subjects": [
+        "Forensic Medicine"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Medicine",
+      "category": "Clinical",
+      "mcq_count": 17887,
+      "source_subjects": [
+        "Medicine"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Surgery",
+      "category": "Clinical",
+      "mcq_count": 16862,
+      "source_subjects": [
+        "Surgery"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Obstetrics & Gynecology",
+      "category": "Clinical",
+      "mcq_count": 10013,
+      "source_subjects": [
+        "Gynaecology & Obstetrics"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Pediatrics",
+      "category": "Clinical",
+      "mcq_count": 8037,
+      "source_subjects": [
+        "Pediatrics"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Ophthalmology",
+      "category": "Clinical",
+      "mcq_count": 6932,
+      "source_subjects": [
+        "Ophthalmology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "ENT",
+      "category": "Clinical",
+      "mcq_count": 4919,
+      "source_subjects": [
+        "ENT"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Psychiatry",
+      "category": "Clinical",
+      "mcq_count": 4442,
+      "source_subjects": [
+        "Psychiatry"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Radiology",
+      "category": "Clinical",
+      "mcq_count": 4395,
+      "source_subjects": [
+        "Radiology"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Anesthesia",
+      "category": "Clinical",
+      "mcq_count": 3172,
+      "source_subjects": [
+        "Anaesthesia"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Orthopedics",
+      "category": "Clinical",
+      "mcq_count": 2999,
+      "source_subjects": [
+        "Orthopaedics"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Dermatology",
+      "category": "Clinical",
+      "mcq_count": 1771,
+      "source_subjects": [
+        "Skin"
+      ],
+      "topics": []
+    }
+  ]
+}

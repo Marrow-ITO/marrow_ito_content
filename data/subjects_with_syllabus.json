@@ -1,0 +1,5154 @@
+{
+  "source": "medmcqa",
+  "taxonomy": "NEET-PG 2026",
+  "extracted_at": "2026-06-04T02:44:09.402597+00:00",
+  "total_subjects": 19,
+  "total_mcqs": 170839,
+  "skipped": {
+    "reason": "not part of NEET-PG syllabus or unclassified",
+    "by_source": [
+      {
+        "name": "Dental",
+        "mcq_count": 8938
+      },
+      {
+        "name": "Unknown",
+        "mcq_count": 3045
+      }
+    ],
+    "total_mcqs": 11983
+  },
+  "unmapped": {
+    "reason": "source subject_name not present in SUBJECT_MAP",
+    "by_source": [],
+    "total_mcqs": 0
+  },
+  "subjects": [
+    {
+      "name": "Anatomy",
+      "category": "Pre-Clinical",
+      "mcq_count": 14560,
+      "source_subjects": [
+        "Anatomy"
+      ],
+      "topics": [
+        {
+          "name": "General Embryology",
+          "lessons": [
+            {
+              "name": "Developmental Timeline"
+            },
+            {
+              "name": "Gametogenesis"
+            },
+            {
+              "name": "Gametogenesis 2"
+            },
+            {
+              "name": "Developmental period: Week 1 & 2"
+            },
+            {
+              "name": "Developmental period: Week 3 & 4"
+            },
+            {
+              "name": "Germ layer derivatives"
+            },
+            {
+              "name": "Ectoderm and neural crest cells derivatives"
+            },
+            {
+              "name": "Mesoderm derivative"
+            },
+            {
+              "name": "Endoderm derivatives"
+            },
+            {
+              "name": "Placenta formation"
+            }
+          ]
+        },
+        {
+          "name": "Histology",
+          "lessons": [
+            {
+              "name": "Body tubes"
+            },
+            {
+              "name": "Epithelial tissue"
+            },
+            {
+              "name": "Glands"
+            },
+            {
+              "name": "Connective tissue"
+            },
+            {
+              "name": "Cartilage tissue"
+            },
+            {
+              "name": "Lymphoid tissue"
+            },
+            {
+              "name": "Integumentary system"
+            },
+            {
+              "name": "Cell junctions"
+            },
+            {
+              "name": "Muscular tissue"
+            },
+            {
+              "name": "Respiratory system"
+            },
+            {
+              "name": "Digestive system"
+            },
+            {
+              "name": "Urinary system"
+            },
+            {
+              "name": "Gential system"
+            }
+          ]
+        },
+        {
+          "name": "Osteology and Arthrology",
+          "lessons": [
+            {
+              "name": "Osteology"
+            },
+            {
+              "name": "Arthrology"
+            }
+          ]
+        },
+        {
+          "name": "Neuro Anatomy",
+          "lessons": [
+            {
+              "name": "Organization of nervous system"
+            },
+            {
+              "name": "Development of nervous system"
+            },
+            {
+              "name": "Third ventricle"
+            },
+            {
+              "name": "Fourth ventricle"
+            },
+            {
+              "name": "White matter (Types of fibers)"
+            },
+            {
+              "name": "Neural columns"
+            },
+            {
+              "name": "Cerebrum"
+            },
+            {
+              "name": "Basal ganglia"
+            },
+            {
+              "name": "Internal capsule"
+            },
+            {
+              "name": "Thalamus and hypothalamus"
+            },
+            {
+              "name": "Brainstem and cranial nerve nuclei"
+            },
+            {
+              "name": "Neural columns and brain stem nuclei"
+            },
+            {
+              "name": "Cerebellum"
+            },
+            {
+              "name": "Spinal cord"
+            },
+            {
+              "name": "Autonomic nervous system"
+            },
+            {
+              "name": "Arterial nervous system"
+            },
+            {
+              "name": "Arterial supply of brain"
+            },
+            {
+              "name": "Brainstem lesions"
+            },
+            {
+              "name": "Venous drainage of cranial cavity"
+            }
+          ]
+        },
+        {
+          "name": "Head and Neck",
+          "lessons": [
+            {
+              "name": "Pharyngeal arches"
+            },
+            {
+              "name": "Pharyngeal pouches & clefts"
+            },
+            {
+              "name": "Tongue development"
+            },
+            {
+              "name": "Pharyngeal arch arteries"
+            },
+            {
+              "name": "Development of skull"
+            },
+            {
+              "name": "Cranial cavity"
+            },
+            {
+              "name": "Cranial cavity- II (Cranial fossae and related foramina)"
+            },
+            {
+              "name": "Cranial activity - IV (Posterior cranial fossa)"
+            },
+            {
+              "name": "Trigeminal nerve"
+            },
+            {
+              "name": "Cavernous sinus"
+            },
+            {
+              "name": "Facial nerve"
+            },
+            {
+              "name": "Glossopharyngeal nerve"
+            },
+            {
+              "name": "Vagus nerve"
+            },
+            {
+              "name": "Hypoglossal nerve"
+            },
+            {
+              "name": "Cervical plexus"
+            },
+            {
+              "name": "Scalenus anterior muscle: Relations"
+            },
+            {
+              "name": "Head and neck: Arterial supply"
+            },
+            {
+              "name": "Head and neck: Venous drainage"
+            },
+            {
+              "name": "Head and neck: Lymphatic drainage"
+            },
+            {
+              "name": "Scalp"
+            },
+            {
+              "name": "Neck triangles"
+            },
+            {
+              "name": "Neck fascia and spaces: Revision"
+            },
+            {
+              "name": "Parotid gland"
+            },
+            {
+              "name": "Pharynx"
+            },
+            {
+              "name": "Oesophagus"
+            },
+            {
+              "name": "Larynx"
+            },
+            {
+              "name": "Vertebral landmarks"
+            },
+            {
+              "name": "Ear"
+            },
+            {
+              "name": "Eyeball"
+            },
+            {
+              "name": "Cranial nerve: 3,4 and 6"
+            }
+          ]
+        },
+        {
+          "name": "Back region",
+          "lessons": [
+            {
+              "name": "Spinal cord termination"
+            },
+            {
+              "name": "Spinal cord: enlargements and spaces"
+            },
+            {
+              "name": "Vertebrae"
+            },
+            {
+              "name": "Lumbar puncture"
+            },
+            {
+              "name": "Vertebral curvatures and slip disc"
+            },
+            {
+              "name": "Cranio-vertebral joints"
+            },
+            {
+              "name": "Vertebral landmarks and triangles"
+            }
+          ]
+        },
+        {
+          "name": "Thorax",
+          "lessons": [
+            {
+              "name": "Development: Cardiovascular system"
+            },
+            {
+              "name": "Development: Embryonic veins"
+            },
+            {
+              "name": "Development: Heart tube"
+            },
+            {
+              "name": "Development: Heart tube and transverse pericardial sinus"
+            },
+            {
+              "name": "Development: Interatrial septum"
+            },
+            {
+              "name": "Development: AP septum formation and anomalies"
+            },
+            {
+              "name": "Development: Fetoplacental circulation"
+            },
+            {
+              "name": "Heart: Surfaces and grooves"
+            },
+            {
+              "name": "Heart: Venous drainage"
+            },
+            {
+              "name": "Heart: Interior"
+            },
+            {
+              "name": "Heart: Arterial supply"
+            },
+            {
+              "name": "Sternal angle and mediastinum"
+            },
+            {
+              "name": "Lungs: Hilum"
+            },
+            {
+              "name": "Lungs: Bronchopulmonary segments"
+            },
+            {
+              "name": "Lungs: Pleura - surface markings"
+            },
+            {
+              "name": "Joints"
+            },
+            {
+              "name": "Respiratory movements"
+            },
+            {
+              "name": "Intercostal drainage and block"
+            },
+            {
+              "name": "Phrenic nerve"
+            },
+            {
+              "name": "Venous drainage"
+            },
+            {
+              "name": "Lymphatic drainage"
+            }
+          ]
+        },
+        {
+          "name": "Upper Limb",
+          "lessons": [
+            {
+              "name": "Embryology"
+            },
+            {
+              "name": "Nerve supply (overview)"
+            },
+            {
+              "name": "Dermatomes and myotomes"
+            },
+            {
+              "name": "Brachial plexus - I (Trunks)"
+            },
+            {
+              "name": "Brachial plexus - II (Cords)"
+            },
+            {
+              "name": "Bones and muscles (proximal region)"
+            },
+            {
+              "name": "Axilla"
+            },
+            {
+              "name": "Scapular movements"
+            },
+            {
+              "name": "Clavipectoral fascia"
+            },
+            {
+              "name": "Muscles of anterior arm region"
+            },
+            {
+              "name": "Muscles of anterior forearm region"
+            },
+            {
+              "name": "Cubital fossa"
+            },
+            {
+              "name": "Carpal and metacarpal bones"
+            },
+            {
+              "name": "Muscles of hand"
+            },
+            {
+              "name": "Posterior forearm muscles"
+            },
+            {
+              "name": "Anatomical snuffbox"
+            },
+            {
+              "name": "Nerve supply: anterior forearm and hand muscle"
+            },
+            {
+              "name": "Median nerve lesions"
+            },
+            {
+              "name": "Ulnar nerve lesions"
+            },
+            {
+              "name": "Radial nerve lesions"
+            },
+            {
+              "name": "Nerve lesions: Comparative analysis"
+            },
+            {
+              "name": "Arterial supply"
+            },
+            {
+              "name": "Venous drainage"
+            },
+            {
+              "name": "Lymphatic drainage"
+            },
+            {
+              "name": "Hand spaces"
+            }
+          ]
+        },
+        {
+          "name": "Abdomen",
+          "lessons": [
+            {
+              "name": "Umbilical cord contents and anomalies"
+            },
+            {
+              "name": "Diaphragm: development and openings"
+            },
+            {
+              "name": "Development of mesentery and pancreas"
+            },
+            {
+              "name": "Gut rotation"
+            },
+            {
+              "name": "Abdominal planes"
+            },
+            {
+              "name": "Neurovascular bundles"
+            },
+            {
+              "name": "Liver"
+            },
+            {
+              "name": "Inguinal and femoral region and associated herniae"
+            },
+            {
+              "name": "Peritoneal cavity : sacs and spaces"
+            },
+            {
+              "name": "Abdomen: Arterial supply"
+            },
+            {
+              "name": "Stomach"
+            },
+            {
+              "name": "Small intestine: Duodenum"
+            },
+            {
+              "name": "Small intestine: Biliary apparatus"
+            },
+            {
+              "name": "Small intestine: jejunum and Ileum"
+            },
+            {
+              "name": "Large intestine"
+            },
+            {
+              "name": "Pancreas"
+            },
+            {
+              "name": "Kidney"
+            },
+            {
+              "name": "Ureter"
+            },
+            {
+              "name": "Venous drainage of abdomen and thorax"
+            }
+          ]
+        },
+        {
+          "name": "Pelvis and Perineum",
+          "lessons": [
+            {
+              "name": "Perineal pouches and ischiorectal fossa"
+            },
+            {
+              "name": "Development of genito-urinary system"
+            },
+            {
+              "name": "Pelvis and perineum"
+            },
+            {
+              "name": "Prostate gland and parts of male urethra"
+            },
+            {
+              "name": "Pelvic diaphragm"
+            },
+            {
+              "name": "Perineal pouches - II"
+            },
+            {
+              "name": "Extravasation of urine"
+            },
+            {
+              "name": "Pudendal nerve"
+            },
+            {
+              "name": "Pelvis & perineum: nerve supply"
+            },
+            {
+              "name": "Pelvis & perineum: Arterial supply"
+            },
+            {
+              "name": "Female reproductive system"
+            },
+            {
+              "name": "Rectum and anal canal"
+            }
+          ]
+        },
+        {
+          "name": "Lower Limb",
+          "lessons": [
+            {
+              "name": "Nerve supply - overview"
+            },
+            {
+              "name": "Muscles of proximal region (hip and knee joints)"
+            },
+            {
+              "name": "Nerve supply thigh muscles"
+            },
+            {
+              "name": "Movement and associated muscles: Hip and knee joints"
+            },
+            {
+              "name": "Muscles and gluteal region"
+            },
+            {
+              "name": "Hybrid muscles"
+            },
+            {
+              "name": "Popliteus"
+            },
+            {
+              "name": "Knee joint"
+            },
+            {
+              "name": "Adductor canal"
+            },
+            {
+              "name": "Popliteal fossa"
+            },
+            {
+              "name": "Leg muscles"
+            },
+            {
+              "name": "Leg and foot region: nerve supply"
+            },
+            {
+              "name": "Flexor retinaculum"
+            },
+            {
+              "name": "Plantar arches"
+            },
+            {
+              "name": "Sole muscles"
+            },
+            {
+              "name": "Arterial supply"
+            },
+            {
+              "name": "Venous drainage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Physiology",
+      "category": "Pre-Clinical",
+      "mcq_count": 8830,
+      "source_subjects": [
+        "Physiology"
+      ],
+      "topics": [
+        {
+          "name": "Orient Next Physiology",
+          "lessons": [
+            {
+              "name": "Orient Next Physiology"
+            }
+          ]
+        },
+        {
+          "name": "General Physiology",
+          "lessons": [
+            {
+              "name": "General Physiology"
+            },
+            {
+              "name": "Concepts in Physiology"
+            },
+            {
+              "name": "Cell membrane and transport proteins"
+            },
+            {
+              "name": "Transport process"
+            }
+          ]
+        },
+        {
+          "name": "Nerve Muscle Physiology",
+          "lessons": [
+            {
+              "name": "Membrane potential"
+            },
+            {
+              "name": "Excitation and action potential"
+            },
+            {
+              "name": "Nerve"
+            },
+            {
+              "name": "Muscle -1"
+            },
+            {
+              "name": "Muscle - II"
+            },
+            {
+              "name": "Sarcomere"
+            },
+            {
+              "name": "Smooth muscle"
+            }
+          ]
+        },
+        {
+          "name": "Blood Physiology",
+          "lessons": [
+            {
+              "name": "Blood physiology"
+            }
+          ]
+        },
+        {
+          "name": "Gastrointestinal system",
+          "lessons": [
+            {
+              "name": "Gastrointestinal tract"
+            }
+          ]
+        },
+        {
+          "name": "Cardiovascular System",
+          "lessons": [
+            {
+              "name": "Conducting system of the heat"
+            },
+            {
+              "name": "ECG"
+            },
+            {
+              "name": "Cardiac cycle - 1"
+            },
+            {
+              "name": "Cardiac cycle - 2"
+            },
+            {
+              "name": "Cardiac output"
+            },
+            {
+              "name": "Circulation Part- 1"
+            },
+            {
+              "name": "Circulation Part -2"
+            }
+          ]
+        },
+        {
+          "name": "Respiratory System",
+          "lessons": [
+            {
+              "name": "Introduction: Respiratory System"
+            },
+            {
+              "name": "Respiratory System Part - 1"
+            },
+            {
+              "name": "Respiratory System Part - 2"
+            },
+            {
+              "name": "Respiratory System Part - 3"
+            },
+            {
+              "name": "Respiratory System Part - 4"
+            }
+          ]
+        },
+        {
+          "name": "Excretory System",
+          "lessons": [
+            {
+              "name": "Renal physiology glomerular function"
+            },
+            {
+              "name": "Excretory system (kidney, bladder) Acid base balance"
+            }
+          ]
+        },
+        {
+          "name": "Endocrine and Reproductive System",
+          "lessons": [
+            {
+              "name": "Introduction to Endocrines"
+            },
+            {
+              "name": "Endocrine system part - 1"
+            },
+            {
+              "name": "Endocrine system part - 2"
+            },
+            {
+              "name": "Male reproductive system"
+            },
+            {
+              "name": "Female reproductive system"
+            }
+          ]
+        },
+        {
+          "name": "The Nervous System",
+          "lessons": [
+            {
+              "name": "Introduction to central nervous system"
+            },
+            {
+              "name": "Sensory system"
+            },
+            {
+              "name": "Motor system part - 1"
+            },
+            {
+              "name": "Motor system part - 2"
+            },
+            {
+              "name": "Physiology of pain"
+            },
+            {
+              "name": "Higher functions"
+            },
+            {
+              "name": "Autonomic nervous system"
+            }
+          ]
+        },
+        {
+          "name": "Special Senses",
+          "lessons": [
+            {
+              "name": "Special senses Part - 1"
+            },
+            {
+              "name": "Special senses Part - 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Biochemistry",
+      "category": "Pre-Clinical",
+      "mcq_count": 8282,
+      "source_subjects": [
+        "Biochemistry"
+      ],
+      "topics": [
+        {
+          "name": "Concepts",
+          "lessons": [
+            {
+              "name": "Four formulas"
+            },
+            {
+              "name": "How to use formulas"
+            },
+            {
+              "name": "cAMP and cGMP"
+            },
+            {
+              "name": "Sources of blood glucose"
+            },
+            {
+              "name": "Fuel in fed, fasting and starvation"
+            },
+            {
+              "name": "Fasting state"
+            },
+            {
+              "name": "Acetyl CoA"
+            },
+            {
+              "name": "Diabetes"
+            },
+            {
+              "name": "Respiratory quotient"
+            },
+            {
+              "name": "Cell organelles"
+            },
+            {
+              "name": "Basics of carbohydrate and enzymes"
+            },
+            {
+              "name": "High energy compounds"
+            }
+          ]
+        },
+        {
+          "name": "Carbohydrate chemistry",
+          "lessons": [
+            {
+              "name": "Basics of carbohydrate chemistry"
+            },
+            {
+              "name": "Isomerism"
+            },
+            {
+              "name": "Classification of carbohydrate"
+            },
+            {
+              "name": "Mucopolysaccharidosis"
+            },
+            {
+              "name": "Beta Galactosidase"
+            },
+            {
+              "name": "Glucose transporters"
+            }
+          ]
+        },
+        {
+          "name": "Carbohydrate Metabolism",
+          "lessons": [
+            {
+              "name": "Glycolysis"
+            },
+            {
+              "name": "Arsenic"
+            },
+            {
+              "name": "Link reaction"
+            },
+            {
+              "name": "TCA cycle"
+            },
+            {
+              "name": "Pasteur’s and warburg effects"
+            },
+            {
+              "name": "NADH shuttles"
+            },
+            {
+              "name": "ETC"
+            },
+            {
+              "name": "Gluconeogenesis"
+            },
+            {
+              "name": "Reciprocal regulation"
+            },
+            {
+              "name": "TIGAR"
+            },
+            {
+              "name": "Glycogen metabolism"
+            },
+            {
+              "name": "Glycogen storage diseases"
+            },
+            {
+              "name": "Glycogen regulation"
+            },
+            {
+              "name": "HMP"
+            },
+            {
+              "name": "Uronic acid pathway"
+            },
+            {
+              "name": "Galactose metabolism"
+            },
+            {
+              "name": "Fructose metabolism"
+            },
+            {
+              "name": "Sorbitol pathway"
+            }
+          ]
+        },
+        {
+          "name": "Enzymes",
+          "lessons": [
+            {
+              "name": "Enzyme basics"
+            },
+            {
+              "name": "Cofactors"
+            },
+            {
+              "name": "Isoenzymes"
+            },
+            {
+              "name": "Enzyme classification"
+            },
+            {
+              "name": "Enzyme kinetics"
+            },
+            {
+              "name": "Enzyme inhibitors"
+            },
+            {
+              "name": "Enzyme uses"
+            },
+            {
+              "name": "Enzyme regulation"
+            }
+          ]
+        },
+        {
+          "name": "Amino acids and proteins",
+          "lessons": [
+            {
+              "name": "Amino acids: basics"
+            },
+            {
+              "name": "Classification and metabolism of amino acids"
+            },
+            {
+              "name": "Glycine metabolism"
+            },
+            {
+              "name": "Phenylalanine and tyrosine metabolism"
+            },
+            {
+              "name": "Tryptophan metabolism"
+            },
+            {
+              "name": "Methionine and cysteine metabolism"
+            },
+            {
+              "name": "Catabolism of amino acids"
+            },
+            {
+              "name": "Transamination"
+            },
+            {
+              "name": "Hyperammonemia"
+            },
+            {
+              "name": "Urea cycle"
+            },
+            {
+              "name": "Urea cycle disorders"
+            },
+            {
+              "name": "Nitric oxide"
+            },
+            {
+              "name": "Protein bonds and structure"
+            },
+            {
+              "name": "Protein Precipitation"
+            },
+            {
+              "name": "Color reactions of amino acids and proteins"
+            },
+            {
+              "name": "Chromatography and electrophoresis"
+            },
+            {
+              "name": "Fibrous proteins"
+            },
+            {
+              "name": "Haem synthesis"
+            },
+            {
+              "name": "Porphyria"
+            },
+            {
+              "name": "Haem catabolism"
+            },
+            {
+              "name": "Chaperones"
+            }
+          ]
+        },
+        {
+          "name": "Lipids",
+          "lessons": [
+            {
+              "name": "Lipid chemistry"
+            },
+            {
+              "name": "Sphingolipidoses"
+            },
+            {
+              "name": "PUFAs"
+            },
+            {
+              "name": "Lipoproteins"
+            },
+            {
+              "name": "HDL"
+            },
+            {
+              "name": "Lipotropic factors"
+            },
+            {
+              "name": "Fatty acid synthesis"
+            },
+            {
+              "name": "Ketone body pathways"
+            },
+            {
+              "name": "Beta oxidation of fatty acids"
+            },
+            {
+              "name": "Cholesterol synthesis"
+            },
+            {
+              "name": "Bile acids"
+            }
+          ]
+        },
+        {
+          "name": "Molecular Biology",
+          "lessons": [
+            {
+              "name": "Nucleotides"
+            },
+            {
+              "name": "Basics of genetics"
+            },
+            {
+              "name": "Genetic disorders"
+            },
+            {
+              "name": "Mitochondrial DNA"
+            },
+            {
+              "name": "DNA replication"
+            },
+            {
+              "name": "Klenow fragment"
+            },
+            {
+              "name": "DNA repair"
+            },
+            {
+              "name": "Types of RNAs"
+            },
+            {
+              "name": "Introns"
+            },
+            {
+              "name": "Transcription"
+            },
+            {
+              "name": "Post transcriptional modifications"
+            },
+            {
+              "name": "Ribozyme"
+            },
+            {
+              "name": "Operon model"
+            },
+            {
+              "name": "Codon"
+            },
+            {
+              "name": "Translation"
+            },
+            {
+              "name": "Genetic techniques"
+            },
+            {
+              "name": "Epigenetics and genomic imprinting"
+            },
+            {
+              "name": "CRISPR"
+            }
+          ]
+        },
+        {
+          "name": "Miscellaneous",
+          "lessons": [
+            {
+              "name": "Alcohol metabolism"
+            },
+            {
+              "name": "Vitamins general"
+            },
+            {
+              "name": "Vitamin A"
+            },
+            {
+              "name": "Vitamin D"
+            },
+            {
+              "name": "Vitamin E"
+            },
+            {
+              "name": "Vitamin K"
+            },
+            {
+              "name": "Vitamin B1"
+            },
+            {
+              "name": "Vitamin B2"
+            },
+            {
+              "name": "Vitamin B3"
+            },
+            {
+              "name": "Vitamin B5"
+            },
+            {
+              "name": "Vitamin B6"
+            },
+            {
+              "name": "Vitamin B7"
+            },
+            {
+              "name": "Vitamin B9"
+            },
+            {
+              "name": "Vitamin B12"
+            },
+            {
+              "name": "Vitamin C"
+            },
+            {
+              "name": "Minerals-basics"
+            },
+            {
+              "name": "Calcium"
+            },
+            {
+              "name": "Iron"
+            },
+            {
+              "name": "Copper"
+            },
+            {
+              "name": "Menke and wilson disease"
+            },
+            {
+              "name": "Selenium and fluorine"
+            },
+            {
+              "name": "Zinc and chromium"
+            },
+            {
+              "name": "Free radicals"
+            },
+            {
+              "name": "Xenobiotics"
+            },
+            {
+              "name": "Muscle energy systems"
+            },
+            {
+              "name": "Meister cycle"
+            },
+            {
+              "name": "Buffers and titration curve"
+            },
+            {
+              "name": "Polyamine pathway"
+            },
+            {
+              "name": "HbA1C"
+            },
+            {
+              "name": "1 carbon metabolism"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pathology",
+      "category": "Para-Clinical",
+      "mcq_count": 14884,
+      "source_subjects": [
+        "Pathology"
+      ],
+      "topics": [
+        {
+          "name": "Cell Injury",
+          "lessons": [
+            {
+              "name": "Concepts of cell injury"
+            },
+            {
+              "name": "Cellular adaptation"
+            },
+            {
+              "name": "Irreversible injury 1"
+            },
+            {
+              "name": "Irreversible injury 2"
+            },
+            {
+              "name": "Free radical injury"
+            },
+            {
+              "name": "Ferroptosis"
+            },
+            {
+              "name": "Pigmentation"
+            }
+          ]
+        },
+        {
+          "name": "Inflammation",
+          "lessons": [
+            {
+              "name": "Introduction to inflammation and vascular changes"
+            },
+            {
+              "name": "Intravascular cellular changes"
+            },
+            {
+              "name": "Extravascular cellular changes"
+            },
+            {
+              "name": "Oxygen dependent and independent bacteria killing"
+            },
+            {
+              "name": "Neutrophil extracellular trap"
+            },
+            {
+              "name": "Performed chemical mediators"
+            },
+            {
+              "name": "Freshly formed chemical mediators"
+            },
+            {
+              "name": "Plasma chemical mediators"
+            },
+            {
+              "name": "Coagulation cascade"
+            },
+            {
+              "name": "Chronic inflammation and wound healing"
+            }
+          ]
+        },
+        {
+          "name": "Immunity 1",
+          "lessons": [
+            {
+              "name": "Basics of immune system activation"
+            },
+            {
+              "name": "Hypersensitivity reactions I to IV"
+            },
+            {
+              "name": "Major histocompatibility complex"
+            }
+          ]
+        },
+        {
+          "name": "Immunity 2",
+          "lessons": [
+            {
+              "name": "Concept of tolerance and basics of autoimmune disorder"
+            },
+            {
+              "name": "Autoimmune disorders 1: SLE"
+            },
+            {
+              "name": "Autoimmune disorders 2"
+            },
+            {
+              "name": "Concepts of organ transplant"
+            },
+            {
+              "name": "Immunodeficiency disorders"
+            },
+            {
+              "name": "Amyloidosis"
+            }
+          ]
+        },
+        {
+          "name": "Genetics",
+          "lessons": [
+            {
+              "name": "Introduction: genetics"
+            },
+            {
+              "name": "Single gene disorder"
+            },
+            {
+              "name": "Non-classical inheritance disorders"
+            },
+            {
+              "name": "Specific cytogenetic disorders"
+            }
+          ]
+        },
+        {
+          "name": "Hematology: Red Blood Cells",
+          "lessons": [
+            {
+              "name": "Hematopoiesis: basic concepts"
+            },
+            {
+              "name": "RBC development and classification of anemias"
+            },
+            {
+              "name": "Microcytic Anemias 1"
+            },
+            {
+              "name": "Microcytic Anemias 2"
+            },
+            {
+              "name": "Hereditary spherocytosis and G6PD deficiency"
+            },
+            {
+              "name": "Basic concepts of hemolytic anemias"
+            },
+            {
+              "name": "Hemoglobinopathies : sickle cell anemia and thalassemia"
+            },
+            {
+              "name": "Megaloblastic Anemia"
+            },
+            {
+              "name": "Autoimmune hemolytic anemia"
+            },
+            {
+              "name": "Miscellaneous disorders"
+            },
+            {
+              "name": "Paroxysmal nocturnal hemoglobinuria"
+            }
+          ]
+        },
+        {
+          "name": "Hematology: White Blood Cells",
+          "lessons": [
+            {
+              "name": "Introduction to WBC disorders"
+            },
+            {
+              "name": "Acute leukemias: ALL and AML"
+            },
+            {
+              "name": "Chronic myeloid leukemia"
+            },
+            {
+              "name": "Myeloid disorders"
+            },
+            {
+              "name": "Lymphomas: HL and NHL"
+            },
+            {
+              "name": "Plasma cell dyscrasias"
+            },
+            {
+              "name": "Plasma cell disorders"
+            },
+            {
+              "name": "Waldenstrom’s disease and heavy chain disorders"
+            }
+          ]
+        },
+        {
+          "name": "Platelets and Blood Transfusion",
+          "lessons": [
+            {
+              "name": "Concepts of bleeding disorders"
+            },
+            {
+              "name": "Introduction to platelet disorders"
+            },
+            {
+              "name": "Angiopathic hemolytic anemia: basic concepts"
+            },
+            {
+              "name": "Clotting factor disorders and concept of factor inhibitors"
+            },
+            {
+              "name": "Von willebrand disease"
+            },
+            {
+              "name": "Blood transfusion and blood grouping"
+            },
+            {
+              "name": "Platelet disorders"
+            }
+          ]
+        },
+        {
+          "name": "Gastrointestinal Tract",
+          "lessons": [
+            {
+              "name": "Carcinoid tumor"
+            },
+            {
+              "name": "Introduction to GIT"
+            },
+            {
+              "name": "Inflammatory bowel disease"
+            },
+            {
+              "name": "Stomach basics gastritis and gastropathy"
+            },
+            {
+              "name": "Peptic ulcer disease"
+            },
+            {
+              "name": "Acute and chronic gastritis"
+            },
+            {
+              "name": "Small intestine malabsorption disorders"
+            },
+            {
+              "name": "Intestinal polyps and colon cancer"
+            },
+            {
+              "name": "Gastric tumors"
+            },
+            {
+              "name": "Alcohol induced esophageal disorders and achalasia cardia"
+            },
+            {
+              "name": "Esophagus applied aspects, esophagitis and barrett's esophagus"
+            },
+            {
+              "name": "Esophageal tumors"
+            },
+            {
+              "name": "Congenital GIT Anomalies"
+            },
+            {
+              "name": "GIT disorders 1"
+            },
+            {
+              "name": "GIT disorders 2"
+            },
+            {
+              "name": "GIT disorders 3"
+            }
+          ]
+        },
+        {
+          "name": "Respiratory System",
+          "lessons": [
+            {
+              "name": "Obstructive lung disorder"
+            },
+            {
+              "name": "Restrictive lung disorder"
+            },
+            {
+              "name": "Pulmonary hypertension"
+            },
+            {
+              "name": "Infective lung disorders"
+            },
+            {
+              "name": "Pulmonary tuberculosis"
+            },
+            {
+              "name": "Pneumoconiosis"
+            },
+            {
+              "name": "Miscellaneous topics: ARDS"
+            },
+            {
+              "name": "Neonatal respiratory distress syndrome"
+            },
+            {
+              "name": "Lung tumors"
+            },
+            {
+              "name": "Lung abscess"
+            }
+          ]
+        },
+        {
+          "name": "Breast",
+          "lessons": [
+            {
+              "name": "Breast disorders"
+            }
+          ]
+        },
+        {
+          "name": "Bone Disorders",
+          "lessons": [
+            {
+              "name": "Bone tumors"
+            }
+          ]
+        },
+        {
+          "name": "Neoplasia",
+          "lessons": [
+            {
+              "name": "Basic concepts of neoplasia"
+            },
+            {
+              "name": "Genetic basis of carcinogenesis - 1"
+            },
+            {
+              "name": "Cancer genes"
+            },
+            {
+              "name": "Etiological factors of neoplasia"
+            },
+            {
+              "name": "Diagnosis of cancers"
+            },
+            {
+              "name": "Liquid Biopsy"
+            },
+            {
+              "name": "Paraneoplastic syndromes"
+            }
+          ]
+        },
+        {
+          "name": "CVS, Blood Vessels and Vasculitis",
+          "lessons": [
+            {
+              "name": "Vasculitis"
+            },
+            {
+              "name": "Ischemic heart disease"
+            },
+            {
+              "name": "Rheumatic fever and infective endocarditis"
+            },
+            {
+              "name": "Cardiac tumors"
+            }
+          ]
+        },
+        {
+          "name": "Kidney and Urinary Bladder",
+          "lessons": [
+            {
+              "name": "Congenital renal disorders"
+            },
+            {
+              "name": "Glomerular disorders 1: nephritic disorders"
+            },
+            {
+              "name": "Hereditary nephritis"
+            },
+            {
+              "name": "Glomerular disorders 2: nephrotic disorders"
+            },
+            {
+              "name": "Renal stones"
+            },
+            {
+              "name": "Renal tumors"
+            }
+          ]
+        },
+        {
+          "name": "Liver, Biliary System and Pancreas",
+          "lessons": [
+            {
+              "name": "Liver disorders 1"
+            },
+            {
+              "name": "Liver disorders 2"
+            }
+          ]
+        },
+        {
+          "name": "Genital System",
+          "lessons": [
+            {
+              "name": "Male genital tract disorder 1"
+            },
+            {
+              "name": "Male genital tract disorder 2"
+            },
+            {
+              "name": "Female genital tract disorder 1"
+            },
+            {
+              "name": "Female genital tract disorder 2"
+            },
+            {
+              "name": "Female genital tract disorder 3"
+            }
+          ]
+        },
+        {
+          "name": "Endocrinology",
+          "lessons": [
+            {
+              "name": "Parathyroid and thyroid disorders"
+            },
+            {
+              "name": "Adrenal gland disorders"
+            }
+          ]
+        },
+        {
+          "name": "Central Nervous System",
+          "lessons": [
+            {
+              "name": "CNS disorders 1"
+            },
+            {
+              "name": "CNS disorders 2"
+            },
+            {
+              "name": "Meningitis"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pharmacology",
+      "category": "Para-Clinical",
+      "mcq_count": 13758,
+      "source_subjects": [
+        "Pharmacology"
+      ],
+      "topics": [
+        {
+          "name": "Covid- 19",
+          "lessons": [
+            {
+              "name": "Drug update for Covid-19"
+            },
+            {
+              "name": "Covid-19"
+            }
+          ]
+        },
+        {
+          "name": "General Pharmacology",
+          "lessons": [
+            {
+              "name": "Pharmacokinetics (Absorption)"
+            },
+            {
+              "name": "Pharmacokinetics (Distribution)"
+            },
+            {
+              "name": "Pharmacokinetics (Metabolism)"
+            },
+            {
+              "name": "Pharmacokinetics (Excretion and calculations)"
+            },
+            {
+              "name": "Pharmacodynamics"
+            },
+            {
+              "name": "Pharmacogenetics"
+            },
+            {
+              "name": "Therapeutic drug monitoring"
+            },
+            {
+              "name": "Clinical trials"
+            },
+            {
+              "name": "Plasma conc VS Time graph"
+            },
+            {
+              "name": "Steady state"
+            },
+            {
+              "name": "Numericals in pharmacology"
+            },
+            {
+              "name": "ADR and pharmacovigilance"
+            },
+            {
+              "name": "Drugs in pregnancy and lactation"
+            },
+            {
+              "name": "Drugs antagonism"
+            },
+            {
+              "name": "Combined effect of drugs"
+            },
+            {
+              "name": "Practicals in general pharmacology"
+            },
+            {
+              "name": "Details of enzymatic receptors (Higher order topic)"
+            },
+            {
+              "name": "Spare receptors"
+            },
+            {
+              "name": "Receptor regulation"
+            },
+            {
+              "name": "Drugs with peculiar names"
+            },
+            {
+              "name": "Types of enzyme inhibitors"
+            },
+            {
+              "name": "Prescription"
+            },
+            {
+              "name": "Hereditary angioneurotic edema"
+            },
+            {
+              "name": "Different named receptors"
+            }
+          ]
+        },
+        {
+          "name": "Autonomic Nervous System",
+          "lessons": [
+            {
+              "name": "Cholinergic drugs"
+            },
+            {
+              "name": "Aniti-cholinergic drugs"
+            },
+            {
+              "name": "Adrenergic drugs"
+            },
+            {
+              "name": "Anti adrenergic drugs"
+            },
+            {
+              "name": "Tertiary and quaternary amines"
+            },
+            {
+              "name": "VMAT 2 inhibitors"
+            },
+            {
+              "name": "Active and passive mydriasis"
+            },
+            {
+              "name": "Rabbit experiments (Eye and Ileum)"
+            },
+            {
+              "name": "Bladder pharmacology"
+            },
+            {
+              "name": "Glaucoma"
+            }
+          ]
+        },
+        {
+          "name": "Cardiovascular System",
+          "lessons": [
+            {
+              "name": "Congestive heart failures"
+            },
+            {
+              "name": "Ischemic heart disease (Angina and MI)"
+            },
+            {
+              "name": "Hypertension"
+            },
+            {
+              "name": "Arrhythmias"
+            },
+            {
+              "name": "Dyslipidemia"
+            },
+            {
+              "name": "Pulmonary hypertension"
+            },
+            {
+              "name": "Management of shock"
+            }
+          ]
+        },
+        {
+          "name": "Kidney",
+          "lessons": [
+            {
+              "name": "Diuretics"
+            }
+          ]
+        },
+        {
+          "name": "Respiratory System",
+          "lessons": [
+            {
+              "name": "Drugs for cough and bronchial asthma"
+            }
+          ]
+        },
+        {
+          "name": "Gastro-Intestinal Tract",
+          "lessons": [
+            {
+              "name": "Drugs for peptic ulcer"
+            },
+            {
+              "name": "Laxative purgatives"
+            },
+            {
+              "name": "Vomiting Diarrhea and inflammatory bowel syndrome"
+            }
+          ]
+        },
+        {
+          "name": "Endocrine System",
+          "lessons": [
+            {
+              "name": "Pituitary hypothalamic system"
+            },
+            {
+              "name": "Thyroid"
+            },
+            {
+              "name": "Pancreas"
+            },
+            {
+              "name": "Adrenal"
+            },
+            {
+              "name": "Osteoporosis"
+            },
+            {
+              "name": "Sex hormones"
+            },
+            {
+              "name": "Oral contraceptives"
+            },
+            {
+              "name": "Bromocriptine in diabetes mellitus (Higher order topic)"
+            }
+          ]
+        },
+        {
+          "name": "Central Nervous System",
+          "lessons": [
+            {
+              "name": "Sedative hypnotics"
+            },
+            {
+              "name": "Parkinsonism"
+            },
+            {
+              "name": "Epilepsy"
+            },
+            {
+              "name": "Psychiatric illness"
+            },
+            {
+              "name": "Drugs of abuse (Opioids and alcohols)"
+            }
+          ]
+        },
+        {
+          "name": "Hematology",
+          "lessons": [
+            {
+              "name": "Drugs affecting blood flow"
+            },
+            {
+              "name": "Drugs affecting cells of blood"
+            }
+          ]
+        },
+        {
+          "name": "Antimicrobial Drugs",
+          "lessons": [
+            {
+              "name": "Cell wall synthesis inhibitors"
+            },
+            {
+              "name": "Protein synthesis inhibitors"
+            },
+            {
+              "name": "Antimetabolites and quinolones"
+            },
+            {
+              "name": "Drugs not effective against certain bacteria"
+            },
+            {
+              "name": "Pseudomembranous colitis"
+            },
+            {
+              "name": "TDK CDK and PAE"
+            },
+            {
+              "name": "Antimicrobial resistance"
+            },
+            {
+              "name": "Mycobacterial diseases (TB, Leprosy and MAC)"
+            },
+            {
+              "name": "Antiviral drugs"
+            },
+            {
+              "name": "Antifungal drugs"
+            },
+            {
+              "name": "Topical antifungal drugs"
+            },
+            {
+              "name": "Anti parasitic drugs"
+            },
+            {
+              "name": "Antimicrobial agents"
+            }
+          ]
+        },
+        {
+          "name": "Anticancer and Immunosuppressants",
+          "lessons": [
+            {
+              "name": "Monoclonal antibodies"
+            },
+            {
+              "name": "Cytotoxic anticancer drugs"
+            },
+            {
+              "name": "Targeted anticancer drugs and immunosuppressants"
+            }
+          ]
+        },
+        {
+          "name": "Autacoids",
+          "lessons": [
+            {
+              "name": "Histamine and 5-HT"
+            },
+            {
+              "name": "Migraine"
+            },
+            {
+              "name": "PGs, LTs and NSAIDs"
+            },
+            {
+              "name": "Gout and Rheumatoid Arthritis"
+            }
+          ]
+        },
+        {
+          "name": "Anesthesia",
+          "lessons": [
+            {
+              "name": "Local anesthesia"
+            },
+            {
+              "name": "Skeletal muscle relaxants"
+            },
+            {
+              "name": "General anesthesia"
+            }
+          ]
+        },
+        {
+          "name": "Miscellaneous",
+          "lessons": [
+            {
+              "name": "Chelating agents"
+            },
+            {
+              "name": "Hyperkalemia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Community Medicine",
+      "category": "Para-Clinical",
+      "mcq_count": 11882,
+      "source_subjects": [
+        "Social & Preventive Medicine"
+      ],
+      "topics": [
+        {
+          "name": "COVID-19",
+          "lessons": [
+            {
+              "name": "Basic steps of donning and doffing PPE"
+            },
+            {
+              "name": "Black fungus Mucormycosis"
+            },
+            {
+              "name": "Covid -19 Biomedical waste management"
+            },
+            {
+              "name": "Covid-19 Vaccines"
+            }
+          ]
+        },
+        {
+          "name": "Recent updates 2021",
+          "lessons": [
+            {
+              "name": "New updated values criteria definitions 2021-22"
+            }
+          ]
+        },
+        {
+          "name": "Epidemiology",
+          "lessons": [
+            {
+              "name": "Definitions and concepts"
+            },
+            {
+              "name": "Classification, cohort study"
+            },
+            {
+              "name": "Case control study, combined designs"
+            },
+            {
+              "name": "Other analytical studies"
+            },
+            {
+              "name": "Confounding and bias"
+            },
+            {
+              "name": "RCT, trials"
+            },
+            {
+              "name": "EBM, Meta-analysis, other studies"
+            },
+            {
+              "name": "Meta-analysis"
+            },
+            {
+              "name": "Forest plot"
+            },
+            {
+              "name": "Funnel plot"
+            },
+            {
+              "name": "Disease causation, measurements, milestones"
+            }
+          ]
+        },
+        {
+          "name": "Vaccines and Cold Chain",
+          "lessons": [
+            {
+              "name": "Concepts of immunity, classification of vaccines"
+            },
+            {
+              "name": "National immunization schedule 2020-21"
+            },
+            {
+              "name": "Contraindications, AEFIs"
+            },
+            {
+              "name": "Cold chain in India"
+            },
+            {
+              "name": "Important facts in immunization"
+            }
+          ]
+        },
+        {
+          "name": "Health and Disease",
+          "lessons": [
+            {
+              "name": "PQLI, HDI, MDPI, BPL"
+            },
+            {
+              "name": "Time distribution, epidemics"
+            },
+            {
+              "name": "Elimination, eradication, surveillance"
+            },
+            {
+              "name": "Levels of prevention of disease"
+            },
+            {
+              "name": "Other key definitions and concepts"
+            }
+          ]
+        },
+        {
+          "name": "Screening of Disease",
+          "lessons": [
+            {
+              "name": "Definition and concepts, examples from NHPs"
+            },
+            {
+              "name": "Sensitivity, specificity, PPV, NPV"
+            },
+            {
+              "name": "ROC curve, precision & accuracy"
+            },
+            {
+              "name": "Likelihood ratios"
+            }
+          ]
+        },
+        {
+          "name": "Demography",
+          "lessons": [
+            {
+              "name": "Definition and concepts"
+            },
+            {
+              "name": "Census, SRS, NFHS, DLHS, VRS"
+            },
+            {
+              "name": "Other key concepts"
+            }
+          ]
+        },
+        {
+          "name": "Preventive Obstetrics, Pediatrics and Geriatrics",
+          "lessons": [
+            {
+              "name": "Obstetric care in RCH: visits, IFA, TT, MCH indicators"
+            },
+            {
+              "name": "Pediatric care in RCH: BW, BL, PEM, breast feeding"
+            },
+            {
+              "name": "Growth and development"
+            },
+            {
+              "name": "School health, geriatrics"
+            }
+          ]
+        },
+        {
+          "name": "Nutrition and Health",
+          "lessons": [
+            {
+              "name": "Nutrition guidelines 2021-22"
+            },
+            {
+              "name": "Definition and concepts"
+            },
+            {
+              "name": "Proteins, fats, rich sources"
+            },
+            {
+              "name": "RDA, nutritional requirements"
+            },
+            {
+              "name": "Vitamins and nutritional deficiencies"
+            },
+            {
+              "name": "Food standards, food adulteration"
+            }
+          ]
+        },
+        {
+          "name": "Social Sciences and Health",
+          "lessons": [
+            {
+              "name": "Definition and concepts in sociology & psychology"
+            },
+            {
+              "name": "Family systems in India"
+            },
+            {
+              "name": "Socio-economic status, Social security"
+            },
+            {
+              "name": "Health economics"
+            }
+          ]
+        },
+        {
+          "name": "Environment and health",
+          "lessons": [
+            {
+              "name": "Water"
+            },
+            {
+              "name": "Air, light, sound, housing, radiation, waste disposal"
+            },
+            {
+              "name": "Medical entomology"
+            }
+          ]
+        },
+        {
+          "name": "International Health",
+          "lessons": [
+            {
+              "name": "International health agencies"
+            },
+            {
+              "name": "Bioterrorism agents"
+            },
+            {
+              "name": "Sustainable development goals"
+            },
+            {
+              "name": "Biosafety levels"
+            }
+          ]
+        },
+        {
+          "name": "Health Education and Communication",
+          "lessons": [
+            {
+              "name": "Definitions and concepts"
+            },
+            {
+              "name": "HC methods, D-P communication"
+            },
+            {
+              "name": "Health education, mass media"
+            },
+            {
+              "name": "National education policy 2020"
+            }
+          ]
+        },
+        {
+          "name": "Health Care in India",
+          "lessons": [
+            {
+              "name": "PH care, elements & principles"
+            },
+            {
+              "name": "Rural and urban health centers, workers, norms"
+            },
+            {
+              "name": "AYUSH, socialized medicine"
+            }
+          ]
+        },
+        {
+          "name": "Family Planning and Contraception",
+          "lessons": [
+            {
+              "name": "Definitions and concepts"
+            },
+            {
+              "name": "Natural methods, barrier methods, IUSs, OCPs"
+            },
+            {
+              "name": "Other FP methods"
+            },
+            {
+              "name": "New initiatives in family planning"
+            }
+          ]
+        },
+        {
+          "name": "Communicable and Non-Communicable Disease",
+          "lessons": [
+            {
+              "name": "General epidemiology"
+            },
+            {
+              "name": "Respiratory infections"
+            },
+            {
+              "name": "Intestinal infections, worm infections"
+            },
+            {
+              "name": "VBDs, arboviral & viral infections, surface infections"
+            },
+            {
+              "name": "Leprosy, HIV & STDs"
+            },
+            {
+              "name": "Other communicable diseases"
+            },
+            {
+              "name": "NCDs: CHD, HTN, DM, RF, Cancers, Obesity, Blindness"
+            }
+          ]
+        },
+        {
+          "name": "National Health Programmes, Policies and Legislations in India",
+          "lessons": [
+            {
+              "name": "National Tuberculosis elimination program 2020-21"
+            },
+            {
+              "name": "RNTCP"
+            },
+            {
+              "name": "NPEP, NHM"
+            },
+            {
+              "name": "NPCBVI, NACP"
+            },
+            {
+              "name": "NVBDCP, NLEP"
+            },
+            {
+              "name": "Other NHPs"
+            },
+            {
+              "name": "New national health programs in India"
+            },
+            {
+              "name": "National digital health mission"
+            },
+            {
+              "name": "Health schemes"
+            },
+            {
+              "name": "New schemes strategies initiatives 2021-22"
+            },
+            {
+              "name": "Health policies & legislations"
+            }
+          ]
+        },
+        {
+          "name": "Allied Health Disciplines",
+          "lessons": [
+            {
+              "name": "Biomedical waste management"
+            },
+            {
+              "name": "Disaster management"
+            },
+            {
+              "name": "Occupational health"
+            },
+            {
+              "name": "Genetics and health"
+            },
+            {
+              "name": "Mental health"
+            }
+          ]
+        },
+        {
+          "name": "Health Planning and Management",
+          "lessons": [
+            {
+              "name": "Definitions and concepts in HP"
+            },
+            {
+              "name": "HP committees"
+            },
+            {
+              "name": "National health policy 2017"
+            },
+            {
+              "name": "HM techniques, inventory control"
+            }
+          ]
+        },
+        {
+          "name": "Biostatistics",
+          "lessons": [
+            {
+              "name": "Variables, scales"
+            },
+            {
+              "name": "Central tendency, dispersion"
+            },
+            {
+              "name": "Normal distribution, skewed distributions"
+            },
+            {
+              "name": "Statistical errors, p-value, confidence intervals"
+            },
+            {
+              "name": "Statistical tests"
+            },
+            {
+              "name": "Statistical graphs, correlation, regression, locations"
+            },
+            {
+              "name": "Sampling, sample size"
+            },
+            {
+              "name": "Probability & odds"
+            },
+            {
+              "name": "Tree diagram"
+            },
+            {
+              "name": "Box and whisker plot"
+            },
+            {
+              "name": "Stem and leaf plot"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "How to give intramuscular injections"
+            },
+            {
+              "name": "How to give intradermal injections"
+            },
+            {
+              "name": "How to give subcutaneous injections"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Microbiology",
+      "category": "Para-Clinical",
+      "mcq_count": 11314,
+      "source_subjects": [
+        "Microbiology"
+      ],
+      "topics": [
+        {
+          "name": "Covid - 19",
+          "lessons": [
+            {
+              "name": "Covid-19"
+            }
+          ]
+        },
+        {
+          "name": "Introduction",
+          "lessons": [
+            {
+              "name": "Introduction to microbiology"
+            }
+          ]
+        },
+        {
+          "name": "Systematic Bacteriology",
+          "lessons": [
+            {
+              "name": "Systematic Bacteriology Part -1 (Gram positive, Cocci, Gram negative cocci)"
+            },
+            {
+              "name": "Systematic Bacteriology Gram Positive Bacilli (part-1)"
+            },
+            {
+              "name": "Systematic Bacteriology Gram Positive Bacilli (part-2)"
+            },
+            {
+              "name": "Systematic Bacteriology (enterobacteriaceae, E.coli, klebsiella, proteus, salmonella, shigella, pseudomonas, vibrio)"
+            },
+            {
+              "name": "Systematic Bacteriology Gram Negative Bacilli (haemophilus, HACEK, bordetella, brucella, yersinia, legionella, spirochetes)"
+            },
+            {
+              "name": "Systematic Bacteriology gram negative bacilli (lepto spira, L. interrogans, rickettsiae, scrub, typhus, Q fever, ehrlichia, bartonella, chlamydiae, campylobacter, helicobacter, mycoplasma, bacteroids)"
+            }
+          ]
+        },
+        {
+          "name": "Mycology",
+          "lessons": [
+            {
+              "name": "Mycology"
+            }
+          ]
+        },
+        {
+          "name": "Parasitology",
+          "lessons": [
+            {
+              "name": "Parasitology part - 1 (Protozoology)"
+            },
+            {
+              "name": "Parasitology part - 2 (Helminthology)"
+            }
+          ]
+        },
+        {
+          "name": "Virology",
+          "lessons": [
+            {
+              "name": "Virology part - 1 (general properties, DNA viruses)"
+            },
+            {
+              "name": "Virology part - 2 (RNA viruses)"
+            },
+            {
+              "name": "Virology and bacteriology must know updates"
+            }
+          ]
+        },
+        {
+          "name": "Immunology",
+          "lessons": [
+            {
+              "name": "Immunology part -1"
+            },
+            {
+              "name": "Immunology part -2"
+            },
+            {
+              "name": "Immunology part - 3"
+            }
+          ]
+        },
+        {
+          "name": "General Microbiology",
+          "lessons": [
+            {
+              "name": "General Microbiology part - 1"
+            },
+            {
+              "name": "General Microbiology part - 2"
+            },
+            {
+              "name": "General Microbiology part -3"
+            }
+          ]
+        },
+        {
+          "name": "System Wise & NEXT Based Clinical Microbiology",
+          "lessons": [
+            {
+              "name": "Normal microbial flora Bone and joint infection"
+            },
+            {
+              "name": "GIT infections"
+            },
+            {
+              "name": "Urinary tract infection"
+            },
+            {
+              "name": "Pelvic infections"
+            },
+            {
+              "name": "Cardiac infections"
+            },
+            {
+              "name": "Upper respiratory tract infections"
+            },
+            {
+              "name": "Lower respiratory tract infections"
+            },
+            {
+              "name": "Central nervous system infections"
+            },
+            {
+              "name": "Bloodstream infections"
+            },
+            {
+              "name": "Fever of unknown origin"
+            },
+            {
+              "name": "Anemia causing organisms"
+            },
+            {
+              "name": "Eye and ear infections"
+            },
+            {
+              "name": "Skin lesions"
+            },
+            {
+              "name": "Random skin lesion images"
+            },
+            {
+              "name": "Nosocomial infections"
+            },
+            {
+              "name": "Hand hygiene"
+            },
+            {
+              "name": "Organisms transmitted by droplet and aerosol"
+            },
+            {
+              "name": "Biosafety levels"
+            },
+            {
+              "name": "Occupational exposures (HIV and HBV)"
+            },
+            {
+              "name": "BMW management"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forensic Medicine",
+      "category": "Para-Clinical",
+      "mcq_count": 5900,
+      "source_subjects": [
+        "Forensic Medicine"
+      ],
+      "topics": [
+        {
+          "name": "Forensic Traumatology",
+          "lessons": [
+            {
+              "name": "Mechanical Injuries"
+            },
+            {
+              "name": "Regional Injuries-1"
+            },
+            {
+              "name": "Regional Injuries-2"
+            },
+            {
+              "name": "Forensic Ballistics"
+            },
+            {
+              "name": "Blast Injuries"
+            },
+            {
+              "name": "Thermal Injuries-1"
+            },
+            {
+              "name": "Thermal Injuries-2"
+            },
+            {
+              "name": "Explosion Injuries and"
+            },
+            {
+              "name": "SCALD"
+            },
+            {
+              "name": "Electrical Injuries"
+            },
+            {
+              "name": "Cold Injury"
+            },
+            {
+              "name": "Heat Artefacts"
+            },
+            {
+              "name": "Transportation Injuries"
+            },
+            {
+              "name": "Torture Method"
+            }
+          ]
+        },
+        {
+          "name": "Indian Legal System & Medical Jurisprudence",
+          "lessons": [
+            {
+              "name": "Indian Legal System- Court Procedures"
+            },
+            {
+              "name": "Legal Sections"
+            },
+            {
+              "name": "Medical Jurisprudence- Part 1"
+            },
+            {
+              "name": "Medical Jurisprudence- Part 2"
+            },
+            {
+              "name": "Medical Certification of cause of Death"
+            }
+          ]
+        },
+        {
+          "name": "Violent asphyxia deaths",
+          "lessons": [
+            {
+              "name": "Asphyxial Deaths Hanging and Strangulation"
+            },
+            {
+              "name": "Asphyxial Deaths Suffocation"
+            },
+            {
+              "name": "Asphyxial Deaths Drowning"
+            }
+          ]
+        },
+        {
+          "name": "Forensic Thanatology & Forensic Identity",
+          "lessons": [
+            {
+              "name": "Postmortem Techniques"
+            },
+            {
+              "name": "Thanatology"
+            },
+            {
+              "name": "Human Identification-1"
+            },
+            {
+              "name": "Human Identification-2"
+            },
+            {
+              "name": "Human Identification-3"
+            }
+          ]
+        },
+        {
+          "name": "Sexual Jurisprudence",
+          "lessons": [
+            {
+              "name": "Sexual offences"
+            },
+            {
+              "name": "Impotency, Virginity, Pregnancy and Abortion"
+            },
+            {
+              "name": "Infant Death"
+            },
+            {
+              "name": "Trace Evidences"
+            },
+            {
+              "name": "Battered Baby Syndrome"
+            }
+          ]
+        },
+        {
+          "name": "Forensic Toxicology",
+          "lessons": [
+            {
+              "name": "Toxicology Introduction"
+            },
+            {
+              "name": "Diagnosis of poisoning in case of Living"
+            },
+            {
+              "name": "Diagnosis of poisoning in case of Dead"
+            },
+            {
+              "name": "General guidelines in the management of a case of poisoning"
+            },
+            {
+              "name": "Corrosives"
+            },
+            {
+              "name": "Metallic Poisons"
+            },
+            {
+              "name": "Non-metallic Irritants"
+            },
+            {
+              "name": "Animal Irritants"
+            },
+            {
+              "name": "Plant Irritants"
+            },
+            {
+              "name": "Cerebral Poisons"
+            },
+            {
+              "name": "Delirients"
+            },
+            {
+              "name": "Cardiac Poisons"
+            },
+            {
+              "name": "Spinal Poisons"
+            },
+            {
+              "name": "Asphyxiants"
+            },
+            {
+              "name": "Agricultural Poisons"
+            }
+          ]
+        },
+        {
+          "name": "Starvation Deaths",
+          "lessons": [
+            {
+              "name": "Starvation Deaths"
+            }
+          ]
+        },
+        {
+          "name": "Forensic Psychiatry",
+          "lessons": [
+            {
+              "name": "Forensic Psychiatry"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Medicine",
+      "category": "Clinical",
+      "mcq_count": 17887,
+      "source_subjects": [
+        "Medicine"
+      ],
+      "topics": [
+        {
+          "name": "Cardiology",
+          "lessons": [
+            {
+              "name": "Mitral valve prolapse"
+            },
+            {
+              "name": "Percutaneous coronary intervention"
+            },
+            {
+              "name": "Heart sounds 1"
+            },
+            {
+              "name": "Heart sounds 2"
+            },
+            {
+              "name": "Heart sounds 3"
+            },
+            {
+              "name": "Mitral regurgitation"
+            },
+            {
+              "name": "Aortic stenosis"
+            },
+            {
+              "name": "Aortic regurgitation"
+            },
+            {
+              "name": "Tricuspid stenosis"
+            },
+            {
+              "name": "Tricuspid regurgitation and pulmonic stenosis and regurgitation"
+            },
+            {
+              "name": "Murmurs"
+            },
+            {
+              "name": "Cardiomyopathies"
+            },
+            {
+              "name": "Takotsubo cardiomyopathies and brugada syndrome"
+            },
+            {
+              "name": "Rheumatic heart disease"
+            },
+            {
+              "name": "Infective endocarditis"
+            },
+            {
+              "name": "ECG and arrhythmias part 1"
+            },
+            {
+              "name": "ECG and arrhythmias part 2"
+            },
+            {
+              "name": "Multifocal atrial tachycardia"
+            },
+            {
+              "name": "ECG changes in hypokalemia & hyperkalemia"
+            },
+            {
+              "name": "Acute coronary syndrome part 1"
+            },
+            {
+              "name": "Acute coronary syndrome part 2"
+            },
+            {
+              "name": "Symptomatic bradycardia with pulse"
+            },
+            {
+              "name": "Congenital heart disease"
+            },
+            {
+              "name": "Metabolic-syndrome-X and syndrome-Z"
+            },
+            {
+              "name": "Hypertension"
+            },
+            {
+              "name": "Disease of pericardium"
+            },
+            {
+              "name": "Congestive heart failure"
+            },
+            {
+              "name": "Bundle branch block"
+            }
+          ]
+        },
+        {
+          "name": "Emergency Medicine",
+          "lessons": [
+            {
+              "name": "Basic cardiac life support"
+            },
+            {
+              "name": "Pulseless electrical activity"
+            },
+            {
+              "name": "Advanced cardiac life support"
+            },
+            {
+              "name": "Mechanical ventilation"
+            },
+            {
+              "name": "Massive transfusion protocol"
+            },
+            {
+              "name": "ARDS"
+            },
+            {
+              "name": "Snake bite"
+            },
+            {
+              "name": "AHA 2020 update on CPR guidelines"
+            },
+            {
+              "name": "High altitude pulmonary edema"
+            }
+          ]
+        },
+        {
+          "name": "Endocrinology",
+          "lessons": [
+            {
+              "name": "Pancreatic neuroendocrine tumors"
+            },
+            {
+              "name": "Diabetes mellitus - 1"
+            },
+            {
+              "name": "Diabetes mellitus - 2"
+            },
+            {
+              "name": "Diabetic ketoacidosis and hyperosmolar coma"
+            },
+            {
+              "name": "Disorders of parathyroid gland"
+            },
+            {
+              "name": "Disorders of adrenal gland"
+            },
+            {
+              "name": "Cushing syndrome"
+            },
+            {
+              "name": "Diseases of thyroid"
+            },
+            {
+              "name": "Diseases of anterior pituitary"
+            },
+            {
+              "name": "Multiple endocrine neoplasia"
+            }
+          ]
+        },
+        {
+          "name": "Nephrology / Kidney Disease",
+          "lessons": [
+            {
+              "name": "Electrolyte imbalances"
+            },
+            {
+              "name": "Bartter syndrome, Gitelman syndrome, Liddle syndrome and comparison with SIADH"
+            },
+            {
+              "name": "Ciliopathies/Chronic tubulointerstitial disorders"
+            },
+            {
+              "name": "Polycystic kidney disease"
+            },
+            {
+              "name": "Thrombotic Thrombocytopenic purpura"
+            },
+            {
+              "name": "Kidney urine analysis"
+            },
+            {
+              "name": "Acute kidney injury"
+            },
+            {
+              "name": "Chronic kidney disease"
+            },
+            {
+              "name": "Diabetic nephropathy"
+            },
+            {
+              "name": "Kidney stones"
+            },
+            {
+              "name": "Renal tubular acidosis"
+            },
+            {
+              "name": "Nephrotic and nephritic syndrome"
+            },
+            {
+              "name": "Renal artery stenosis"
+            }
+          ]
+        },
+        {
+          "name": "GIT",
+          "lessons": [
+            {
+              "name": "Bleeding from the gut"
+            },
+            {
+              "name": "Peptic ulcer disease"
+            },
+            {
+              "name": "Zollinger Ellison Syndrome"
+            },
+            {
+              "name": "Malabsorption Syndrome"
+            },
+            {
+              "name": "Inflammatory Bowel Syndrome"
+            },
+            {
+              "name": "Irritable Bowel Syndrome"
+            }
+          ]
+        },
+        {
+          "name": "Hematology",
+          "lessons": [
+            {
+              "name": "Chronic Lymphocytic Leukemia"
+            },
+            {
+              "name": "Chronic Myeloid Leukemia"
+            },
+            {
+              "name": "Acute Myeloblastic Leukemia"
+            },
+            {
+              "name": "Acute Lymphoblastic Leukemia"
+            },
+            {
+              "name": "Multiple Myeloma"
+            },
+            {
+              "name": "Blood components"
+            },
+            {
+              "name": "Blood transfusion complications"
+            },
+            {
+              "name": "Hodgkins and non-hodgkin's lymphoma"
+            },
+            {
+              "name": "Thalassemia"
+            },
+            {
+              "name": "Sickle cell disease, G-6PD deficiency and other hemolytic anemias"
+            },
+            {
+              "name": "Sideroblastic anemia"
+            },
+            {
+              "name": "Platelet disorders"
+            }
+          ]
+        },
+        {
+          "name": "Neurology",
+          "lessons": [
+            {
+              "name": "Basics of middle cerebral artery and cranial nerve arrangement"
+            },
+            {
+              "name": "Mechanical thrombectomy"
+            },
+            {
+              "name": "Stroke"
+            },
+            {
+              "name": "Transient ischemic attack and stroke interventions"
+            },
+            {
+              "name": "Intraparenchymal hemorrhage and other CNS bleeds"
+            },
+            {
+              "name": "Subarachnoid hemorrhage"
+            },
+            {
+              "name": "Headache and migraine"
+            },
+            {
+              "name": "Epilepsy and EEG"
+            },
+            {
+              "name": "Raised ICP and brain death"
+            },
+            {
+              "name": "Intracranial space occupying lesion"
+            },
+            {
+              "name": "Meningitis part 1"
+            },
+            {
+              "name": "Meningitis part 2"
+            },
+            {
+              "name": "CNS infections in AIDS positive patients"
+            },
+            {
+              "name": "Parkinsonism and parkinson's disease"
+            },
+            {
+              "name": "Myasthenia Gravis"
+            },
+            {
+              "name": "Guillain Barre syndrome"
+            },
+            {
+              "name": "Alzheimer disease"
+            },
+            {
+              "name": "Multiple sclerosis"
+            },
+            {
+              "name": "Neuromyelitis optica"
+            },
+            {
+              "name": "Amyotrophic lateral sclerosis"
+            },
+            {
+              "name": "Syringomyelia and conus medullaris syndrome"
+            },
+            {
+              "name": "Channelopathies"
+            }
+          ]
+        },
+        {
+          "name": "Rheumatology /Connective Tissue Disorder",
+          "lessons": [
+            {
+              "name": "Systemic Lupus Erythematosus"
+            },
+            {
+              "name": "Rheumatoid arthritis"
+            },
+            {
+              "name": "Crystal arthropathy"
+            },
+            {
+              "name": "Vasculitis"
+            },
+            {
+              "name": "Scleroderma"
+            },
+            {
+              "name": "Sarcoidosis"
+            },
+            {
+              "name": "Ankylosing spondylitis"
+            },
+            {
+              "name": "IGG4 related disease"
+            }
+          ]
+        },
+        {
+          "name": "Liver",
+          "lessons": [
+            {
+              "name": "Hepatitis B"
+            },
+            {
+              "name": "Hepatitis-C - D and fulminant hepatitis"
+            },
+            {
+              "name": "Hepatorenal syndrome and hepatopulmonary syndrome"
+            },
+            {
+              "name": "Autoimmune hepatitis"
+            },
+            {
+              "name": "Cirrhosis and its complications"
+            },
+            {
+              "name": "PBC and PSC"
+            },
+            {
+              "name": "Wilson disease and hemochromatosis"
+            },
+            {
+              "name": "Alcoholic hepatitis"
+            },
+            {
+              "name": "Hereditary Hyperbilirubinemia"
+            },
+            {
+              "name": "Paracetamol toxicity /Acetaminophen toxicity"
+            },
+            {
+              "name": "Budd chiari syndrome"
+            }
+          ]
+        },
+        {
+          "name": "Pulmonology",
+          "lessons": [
+            {
+              "name": "Cystic fibrosis"
+            },
+            {
+              "name": "Obstructive sleep apnea"
+            },
+            {
+              "name": "Pulmonary embolism"
+            },
+            {
+              "name": "Fat embolism syndrome"
+            },
+            {
+              "name": "Bronchiectasis"
+            },
+            {
+              "name": "Pneumonia"
+            },
+            {
+              "name": "Bronchial asthma"
+            },
+            {
+              "name": "COPD"
+            },
+            {
+              "name": "COPD update"
+            },
+            {
+              "name": "Respiratory failure"
+            },
+            {
+              "name": "Tuberculosis"
+            },
+            {
+              "name": "Interstitial lung disease"
+            },
+            {
+              "name": "Pulmonary Alveolar proteinosis"
+            },
+            {
+              "name": "Pleural effusion"
+            },
+            {
+              "name": "Pneumothorax"
+            },
+            {
+              "name": "Flow volume curve, spirometry and DLCO"
+            },
+            {
+              "name": "ABG analysis simplified part 1"
+            },
+            {
+              "name": "ABG analysis simplified part 2"
+            }
+          ]
+        },
+        {
+          "name": "Infections",
+          "lessons": [
+            {
+              "name": "Fever of unknown origin"
+            },
+            {
+              "name": "Dengue fever"
+            },
+            {
+              "name": "Nipah virus and Zika virus"
+            },
+            {
+              "name": "Pneumocystis Jirovecii"
+            },
+            {
+              "name": "Aspergillosis"
+            },
+            {
+              "name": "AIDS"
+            },
+            {
+              "name": "Covid- 19"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "Frog Sign"
+            },
+            {
+              "name": "Breath sounds"
+            },
+            {
+              "name": "Approach to parkinson disease"
+            },
+            {
+              "name": "Myoclonus vs myotonia vs myokymia"
+            },
+            {
+              "name": "Epilepsy"
+            },
+            {
+              "name": "Brockenbrough braunwald morrow sign"
+            },
+            {
+              "name": "Lumbar puncture essentials"
+            },
+            {
+              "name": "Approach to case of suspected meningitis"
+            },
+            {
+              "name": "Glasgow coma scale"
+            },
+            {
+              "name": "Pacemaker"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Surgery",
+      "category": "Clinical",
+      "mcq_count": 16862,
+      "source_subjects": [
+        "Surgery"
+      ],
+      "topics": [
+        {
+          "name": "Endocrine Surgery",
+          "lessons": [
+            {
+              "name": "Breast part 1"
+            },
+            {
+              "name": "Breast part 2"
+            },
+            {
+              "name": "Thyroid 1"
+            },
+            {
+              "name": "Thyroid 2"
+            },
+            {
+              "name": "Parathyroid and adrenal gland"
+            }
+          ]
+        },
+        {
+          "name": "Hepatobiliary Pancreatic Surgery",
+          "lessons": [
+            {
+              "name": "Liver Part - 1"
+            },
+            {
+              "name": "Liver Part - 2"
+            },
+            {
+              "name": "Portal hypertension"
+            },
+            {
+              "name": "Gallbladder"
+            },
+            {
+              "name": "Bile Duct part - 1"
+            },
+            {
+              "name": "Bile Duct part - 2"
+            },
+            {
+              "name": "Pancreas"
+            }
+          ]
+        },
+        {
+          "name": "Gastrointestinal Surgery",
+          "lessons": [
+            {
+              "name": "Esophagus"
+            },
+            {
+              "name": "Stomach and Duodenum"
+            },
+            {
+              "name": "Peritoneum"
+            },
+            {
+              "name": "Intestinal obstruction"
+            },
+            {
+              "name": "Small intestine"
+            },
+            {
+              "name": "Large intestine"
+            },
+            {
+              "name": "Ileostomy and Colostomy"
+            },
+            {
+              "name": "Inflammatory bowel disease part 1"
+            },
+            {
+              "name": "Inflammatory bowel disease part 2"
+            },
+            {
+              "name": "Vermiform appendix"
+            },
+            {
+              "name": "Rectum and anal canal"
+            },
+            {
+              "name": "Hernia and abdominal wall 1"
+            },
+            {
+              "name": "Hernia and abdominal wall part 2"
+            },
+            {
+              "name": "Spleen"
+            }
+          ]
+        },
+        {
+          "name": "Urology",
+          "lessons": [
+            {
+              "name": "Kidney and Ureter Part - 1"
+            },
+            {
+              "name": "Kidney and Ureter Part - 2"
+            },
+            {
+              "name": "Kidney and Ureter Part - 3"
+            },
+            {
+              "name": "Urinary bladder"
+            },
+            {
+              "name": "Prostate and seminal vesicles"
+            },
+            {
+              "name": "Urethra and penis"
+            },
+            {
+              "name": "Testis and scrotum part - 1"
+            },
+            {
+              "name": "Testis and scrotum part - 2"
+            }
+          ]
+        },
+        {
+          "name": "Cardiothoracic vascular surgery",
+          "lessons": [
+            {
+              "name": "Arterial disorders part 1"
+            },
+            {
+              "name": "Arterial disorders part 2"
+            },
+            {
+              "name": "Venous disorders"
+            },
+            {
+              "name": "Lymphatic system"
+            },
+            {
+              "name": "Thorax and mediastinum part 1"
+            },
+            {
+              "name": "Thorax and mediastinum part 2"
+            }
+          ]
+        },
+        {
+          "name": "Plastic Surgery",
+          "lessons": [
+            {
+              "name": "Burns"
+            },
+            {
+              "name": "Plastic surgery and skin lesions"
+            },
+            {
+              "name": "Wound healing tissue repair and scar"
+            }
+          ]
+        },
+        {
+          "name": "Neurosurgery",
+          "lessons": [
+            {
+              "name": "Cerebrovascular diseases"
+            },
+            {
+              "name": "CNS tumor"
+            }
+          ]
+        },
+        {
+          "name": "Head and Neck",
+          "lessons": [
+            {
+              "name": "Oral cavity"
+            },
+            {
+              "name": "Salivary glands"
+            },
+            {
+              "name": "Neck"
+            },
+            {
+              "name": "Facial injuries and abnormalities"
+            }
+          ]
+        },
+        {
+          "name": "Oncology",
+          "lessons": [
+            {
+              "name": "Oncology"
+            }
+          ]
+        },
+        {
+          "name": "Others",
+          "lessons": [
+            {
+              "name": "Trauma ATLS protocol"
+            },
+            {
+              "name": "Nutrition"
+            },
+            {
+              "name": "Pediatric surgery part - I"
+            },
+            {
+              "name": "Pediatric surgery part - II"
+            },
+            {
+              "name": "Head injury"
+            },
+            {
+              "name": "Neck and thoracic injuries"
+            },
+            {
+              "name": "Abdominal trauma"
+            },
+            {
+              "name": "Transplantation Part 1"
+            },
+            {
+              "name": "Transplantation Part 2"
+            },
+            {
+              "name": "Robotics, laparoscopy and bariatric surgery"
+            },
+            {
+              "name": "Sutures and anastomoses"
+            },
+            {
+              "name": "Shock"
+            },
+            {
+              "name": "General surgery"
+            },
+            {
+              "name": "Tubes, catheters and drains"
+            },
+            {
+              "name": "Instruments Part 1"
+            },
+            {
+              "name": "Instruments Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "Clinical examination of fistula in Ano"
+            },
+            {
+              "name": "Hernia"
+            },
+            {
+              "name": "Modified radical mastectomy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Obstetrics & Gynecology",
+      "category": "Clinical",
+      "mcq_count": 10013,
+      "source_subjects": [
+        "Gynaecology & Obstetrics"
+      ],
+      "topics": [
+        {
+          "name": "Gynecology",
+          "lessons": [
+            {
+              "name": "Mensuration"
+            },
+            {
+              "name": "Menstrual problems in young and small girls"
+            },
+            {
+              "name": "Ovarian hyperstimulation syndrome (Bakers dozen)"
+            },
+            {
+              "name": "Tests of ovulation"
+            },
+            {
+              "name": "Endometriosis adenomyosis"
+            },
+            {
+              "name": "Hormonal replacement therapy (Sweet-sixty-sixteen)"
+            },
+            {
+              "name": "Ovarian tumors"
+            },
+            {
+              "name": "Polycystic ovarian syndrome"
+            },
+            {
+              "name": "Cervical carcinoma"
+            },
+            {
+              "name": "Post menopausal bleeding"
+            },
+            {
+              "name": "Vulvar carcinoma"
+            },
+            {
+              "name": "Fibroids"
+            },
+            {
+              "name": "Hysterectomy"
+            },
+            {
+              "name": "Mullerian abnormalities"
+            },
+            {
+              "name": "Abnormal uterine bleeding (It's a downpour!)"
+            },
+            {
+              "name": "Gametogenesis"
+            },
+            {
+              "name": "Intersex (She is your brother!)"
+            },
+            {
+              "name": "Pubertal changes"
+            },
+            {
+              "name": "Infertility"
+            },
+            {
+              "name": "Gential organ prolapse"
+            },
+            {
+              "name": "Urinary fistula in obstetrics"
+            },
+            {
+              "name": "Emergency contraceptives"
+            },
+            {
+              "name": "Contraception"
+            },
+            {
+              "name": "Genital tract infection"
+            },
+            {
+              "name": "Amenorrhea"
+            },
+            {
+              "name": "Clinical anatomy of female reproductive tract"
+            },
+            {
+              "name": "Endometrial carcinoma"
+            }
+          ]
+        },
+        {
+          "name": "Obstetrics",
+          "lessons": [
+            {
+              "name": "Covid-19 in pregnancy"
+            },
+            {
+              "name": "Postpartum hemorrhage"
+            },
+            {
+              "name": "Placenta: Separation and complications"
+            },
+            {
+              "name": "Placenta and cord: complications"
+            },
+            {
+              "name": "Rh incompatibility"
+            },
+            {
+              "name": "Twin pregnancy"
+            },
+            {
+              "name": "Molar pregnancy and gestational trophoblastic disease"
+            },
+            {
+              "name": "Antepartum Hemorrhage"
+            },
+            {
+              "name": "Pregnancy induced hypertension"
+            },
+            {
+              "name": "Diabetes in pregnancy"
+            },
+            {
+              "name": "Intrauterine growth restriction"
+            },
+            {
+              "name": "Medical illness complicating pregnancy"
+            },
+            {
+              "name": "Parturition introduction"
+            },
+            {
+              "name": "Basic definitions, cardinal movements, ECV"
+            },
+            {
+              "name": "Fetal skull, maternal pelvis, important dimensions"
+            },
+            {
+              "name": "Malpositions, malpresentations"
+            },
+            {
+              "name": "Basics of instrumental delivery, methods of labor induction"
+            },
+            {
+              "name": "Episiotomy"
+            },
+            {
+              "name": "Puerperium"
+            },
+            {
+              "name": "Cesarean section"
+            },
+            {
+              "name": "Infection in pregnancy"
+            },
+            {
+              "name": "Drugs in pregnancy"
+            },
+            {
+              "name": "Anemia in pregnancy"
+            },
+            {
+              "name": "Vomiting in pregnancy"
+            },
+            {
+              "name": "Ectopic pregnancy"
+            },
+            {
+              "name": "Abortions"
+            },
+            {
+              "name": "Induced abortions (MTP)"
+            }
+          ]
+        },
+        {
+          "name": "Drugs Used in Obstetrics and Gynaecology",
+          "lessons": [
+            {
+              "name": "Drugs used in obstetrics and gynecology"
+            }
+          ]
+        },
+        {
+          "name": "Instruments",
+          "lessons": [
+            {
+              "name": "Instruments in gynecology and obstetrics"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pediatrics",
+      "category": "Clinical",
+      "mcq_count": 8037,
+      "source_subjects": [
+        "Pediatrics"
+      ],
+      "topics": [
+        {
+          "name": "Growth",
+          "lessons": [
+            {
+              "name": "Assessment of growth and growth charts"
+            },
+            {
+              "name": "Normal Anthropometric parameters"
+            },
+            {
+              "name": "Short stature and tall stature"
+            },
+            {
+              "name": "Abnormalities of head size and shape"
+            },
+            {
+              "name": "Normal and abnormal dentition"
+            }
+          ]
+        },
+        {
+          "name": "Normal Development",
+          "lessons": [
+            {
+              "name": "Important motor milestones"
+            },
+            {
+              "name": "Social and language milestones"
+            },
+            {
+              "name": "Developmental implications of important milestones"
+            }
+          ]
+        },
+        {
+          "name": "Developmental and Behavioral Disorders",
+          "lessons": [
+            {
+              "name": "Abnormalities of development"
+            },
+            {
+              "name": "Behavioral disorders in children"
+            }
+          ]
+        },
+        {
+          "name": "Puberty and Adolescence",
+          "lessons": [
+            {
+              "name": "Puberty and adolescence"
+            }
+          ]
+        },
+        {
+          "name": "Neonatology",
+          "lessons": [
+            {
+              "name": "Important techniques and preterm and post term neonates"
+            },
+            {
+              "name": "Primitive neonatal reflexes and conditions seen in neonates and requiring treatment"
+            },
+            {
+              "name": "Neonatal resuscitation"
+            },
+            {
+              "name": "IUGR and feeding of preterm neonate"
+            },
+            {
+              "name": "Neonatal sepsis"
+            },
+            {
+              "name": "Neonatal hypothermia"
+            },
+            {
+              "name": "Neonatal hypoglycemia"
+            },
+            {
+              "name": "Perinatal asphyxia"
+            },
+            {
+              "name": "Important scores in neonates"
+            },
+            {
+              "name": "Necrotising enterocolitis"
+            },
+            {
+              "name": "Neonatal jaundice"
+            },
+            {
+              "name": "Erythroblastosis fetalis"
+            },
+            {
+              "name": "Latest updates in neonatology"
+            }
+          ]
+        },
+        {
+          "name": "Nutrition and Malnutrition",
+          "lessons": [
+            {
+              "name": "Breast milk and breastfeeding"
+            },
+            {
+              "name": "Micronutrients in health and disease"
+            },
+            {
+              "name": "Malnutrition"
+            }
+          ]
+        },
+        {
+          "name": "Fluid and Electrolyte Disturbances",
+          "lessons": [
+            {
+              "name": "Body composition and acid base balance"
+            },
+            {
+              "name": "Disorders of sodium and potassium"
+            },
+            {
+              "name": "IV fluids in health and disease"
+            }
+          ]
+        },
+        {
+          "name": "Genetics and Genetic Disorders",
+          "lessons": [
+            {
+              "name": "Types of genetic disorders"
+            },
+            {
+              "name": "Important genetic syndromes"
+            }
+          ]
+        },
+        {
+          "name": "Inborn Error of Metabolism",
+          "lessons": [
+            {
+              "name": "Disorders of carbohydrate metabolism"
+            },
+            {
+              "name": "Disorders of Amino acid metabolism"
+            },
+            {
+              "name": "Lysosomal storage disease"
+            }
+          ]
+        },
+        {
+          "name": "Diseases of Immune System",
+          "lessons": [
+            {
+              "name": "Primary immunodeficiency"
+            },
+            {
+              "name": "Vasculitic disorders in children"
+            }
+          ]
+        },
+        {
+          "name": "Infectious Diseases",
+          "lessons": [
+            {
+              "name": "Important viral diseases in children"
+            },
+            {
+              "name": "Covid-19 in children"
+            },
+            {
+              "name": "Important bacterial diseases in children"
+            },
+            {
+              "name": "Congenital infection"
+            }
+          ]
+        },
+        {
+          "name": "Immunization",
+          "lessons": [
+            {
+              "name": "Immunization - general concepts and special situations"
+            },
+            {
+              "name": "Individual vaccines"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Cardiology",
+          "lessons": [
+            {
+              "name": "Fetal circulation and classification of congenital heart disease"
+            },
+            {
+              "name": "Important acyanotic congenital heart diseases"
+            },
+            {
+              "name": "Tetralogy of fallot"
+            },
+            {
+              "name": "Rheumatic heart disease"
+            },
+            {
+              "name": "Other congenital heart diseases"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Hematology and Oncology",
+          "lessons": [
+            {
+              "name": "Important hematological disorders in children"
+            },
+            {
+              "name": "Important bleeding & coagulation disorders in children"
+            },
+            {
+              "name": "Hematological malignancies in children"
+            },
+            {
+              "name": "Tumors of infancy and childhood"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Gastroenterology",
+          "lessons": [
+            {
+              "name": "Disorders of gastrointestinal system including diarrhea"
+            },
+            {
+              "name": "Liver disorders in children"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Respiratory Disorders",
+          "lessons": [
+            {
+              "name": "Normal structure and function of kidney in children"
+            },
+            {
+              "name": "Acute and chronic kidney diseases"
+            },
+            {
+              "name": "Congenital abnormalities of genitourinary tract"
+            },
+            {
+              "name": "Nephritic and nephrotic syndrome"
+            },
+            {
+              "name": "Obstructive and infective disorders of urinary tract"
+            },
+            {
+              "name": "Renal tubular disorders"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Neurology",
+          "lessons": [
+            {
+              "name": "Congenital CNS malformations and hydrocephalus"
+            },
+            {
+              "name": "Seizures in children"
+            },
+            {
+              "name": "Disorders with CNS involvement and brain death"
+            }
+          ]
+        },
+        {
+          "name": "Musculoskeletal disorders in children",
+          "lessons": [
+            {
+              "name": "Disorders of muscles in children"
+            },
+            {
+              "name": "Rickets"
+            },
+            {
+              "name": "Important disorders involving bones"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric endocrinology",
+          "lessons": [
+            {
+              "name": "Disorders of pituitary"
+            },
+            {
+              "name": "Disorders of thyroid in children"
+            },
+            {
+              "name": "Adrenal disorders"
+            },
+            {
+              "name": "Disorders of puberty"
+            },
+            {
+              "name": "Disorders of sexual development"
+            },
+            {
+              "name": "Type-1 Diabetes mellitus and obesity in children"
+            }
+          ]
+        },
+        {
+          "name": "Common Childhood Poisonings",
+          "lessons": [
+            {
+              "name": "Common childhood poisonings"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "Orogastric feeding tube insertion in a neonate"
+            },
+            {
+              "name": "How to use radiant warmer for a neonate"
+            },
+            {
+              "name": "Self inflating bag and mask for neonatal resuscitation"
+            },
+            {
+              "name": "Identification of preterm vs term neonate"
+            },
+            {
+              "name": "Steps of hand washing before entering a neonatal intensive care unit (NICU)"
+            },
+            {
+              "name": "Different types of seizures seen in children"
+            },
+            {
+              "name": "Gower sign"
+            },
+            {
+              "name": "Setting sun sign"
+            },
+            {
+              "name": "Sturge weber syndrome"
+            },
+            {
+              "name": "Intravenous cannula and its insertion in neonates and children"
+            },
+            {
+              "name": "Phototherapy for neonatal jaundice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ophthalmology",
+      "category": "Clinical",
+      "mcq_count": 6932,
+      "source_subjects": [
+        "Ophthalmology"
+      ],
+      "topics": [
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "Indirect ophthalmoscopy"
+            }
+          ]
+        },
+        {
+          "name": "Introduction to Ophthalmology",
+          "lessons": [
+            {
+              "name": "Introduction to Ophthalmology"
+            }
+          ]
+        },
+        {
+          "name": "Basics of Ophthalmology",
+          "lessons": [
+            {
+              "name": "Basics of Ophthalmology Part- I"
+            },
+            {
+              "name": "Basics of Ophthalmology Part - II"
+            },
+            {
+              "name": "Embryology of the eye"
+            }
+          ]
+        },
+        {
+          "name": "Orbit and Adnexa",
+          "lessons": [
+            {
+              "name": "Orbit and adnexa"
+            },
+            {
+              "name": "Lacrimal apparatus"
+            }
+          ]
+        },
+        {
+          "name": "Lens and Cataract",
+          "lessons": [
+            {
+              "name": "Cataract part - 1"
+            },
+            {
+              "name": "Cataract part - 2"
+            }
+          ]
+        },
+        {
+          "name": "Uveitis",
+          "lessons": [
+            {
+              "name": "Uveitis"
+            }
+          ]
+        },
+        {
+          "name": "Glaucoma",
+          "lessons": [
+            {
+              "name": "Glaucoma Part 2"
+            },
+            {
+              "name": "Glaucoma Part 3"
+            },
+            {
+              "name": "Glaucoma Part 1"
+            }
+          ]
+        },
+        {
+          "name": "Refraction",
+          "lessons": [
+            {
+              "name": "Refraction part 1"
+            },
+            {
+              "name": "Refraction part 2"
+            }
+          ]
+        },
+        {
+          "name": "Retina and Vitreous",
+          "lessons": [
+            {
+              "name": "Retina and Vitreous Part 1"
+            },
+            {
+              "name": "Retina and Vitreous Part 2"
+            },
+            {
+              "name": "Retina and Vitreous Part 3"
+            },
+            {
+              "name": "Hypertensive retinopathy"
+            }
+          ]
+        },
+        {
+          "name": "Neuro Ophthalmology",
+          "lessons": [
+            {
+              "name": "Neuro Ophthalmology Part 1 Neuro Ophthalmology Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Squint / Strabismus",
+          "lessons": [
+            {
+              "name": "Squint and Strabismus Part 1"
+            },
+            {
+              "name": "Squint and Strabismus Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Conjunctiva",
+          "lessons": [
+            {
+              "name": "Conjunctiva"
+            }
+          ]
+        },
+        {
+          "name": "Cornea",
+          "lessons": [
+            {
+              "name": "Cornea Part 1"
+            },
+            {
+              "name": "Cornea Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Sclera",
+          "lessons": [
+            {
+              "name": "Episcleritis and devastating scleritis"
+            }
+          ]
+        },
+        {
+          "name": "Trauma",
+          "lessons": [
+            {
+              "name": "Ocular trauma"
+            },
+            {
+              "name": "Chemical injuries"
+            }
+          ]
+        },
+        {
+          "name": "Imaging in Ophthalmology",
+          "lessons": [
+            {
+              "name": "Imaging in ophthalmology"
+            }
+          ]
+        },
+        {
+          "name": "Lasers in Ophthalmology",
+          "lessons": [
+            {
+              "name": "Lasers in Ophthalmology"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ENT",
+      "category": "Clinical",
+      "mcq_count": 4919,
+      "source_subjects": [
+        "ENT"
+      ],
+      "topics": [
+        {
+          "name": "Ear",
+          "lessons": [
+            {
+              "name": "Fundamentals of ear (Osteology and Embryology)"
+            },
+            {
+              "name": "Anatomy of external ear"
+            },
+            {
+              "name": "Diseases of external ear"
+            },
+            {
+              "name": "Anatomy of middle ear cleft"
+            },
+            {
+              "name": "Eustachian tube (Anatomy, physiology and diagnostic tests)"
+            },
+            {
+              "name": "Anatomy of inner ear"
+            },
+            {
+              "name": "Neural pathway of sound"
+            },
+            {
+              "name": "Physiology of hearing"
+            },
+            {
+              "name": "Tests of hearing"
+            },
+            {
+              "name": "Facial nerve and its disorders"
+            },
+            {
+              "name": "Otitis media"
+            },
+            {
+              "name": "Complications of otitis media"
+            },
+            {
+              "name": "Otosclerosis"
+            },
+            {
+              "name": "Glomus tumor"
+            },
+            {
+              "name": "Diseases of inner ear"
+            },
+            {
+              "name": "Anatomy and diseases of CP angle"
+            },
+            {
+              "name": "Hearing devices"
+            },
+            {
+              "name": "Vestibular Schwannoma"
+            }
+          ]
+        },
+        {
+          "name": "Nose and Paranasal Sinuses",
+          "lessons": [
+            {
+              "name": "Congenital lesions of nose"
+            },
+            {
+              "name": "CSF rhinorrhoea"
+            },
+            {
+              "name": "Fungal rhinosinusitis"
+            },
+            {
+              "name": "X-rays of paranasal sinuses"
+            },
+            {
+              "name": "Rhinosinusitis"
+            },
+            {
+              "name": "Nasal disorders of atrophy"
+            },
+            {
+              "name": "Embryology of nose and face"
+            },
+            {
+              "name": "Introduction to paranasal sinuses"
+            },
+            {
+              "name": "Miscellaneous"
+            },
+            {
+              "name": "Blood supply of nasal septum and epistaxis"
+            },
+            {
+              "name": "Paranasal sinuses anatomy"
+            },
+            {
+              "name": "Tumors of nose and paranasal sinuses"
+            },
+            {
+              "name": "Anatomy of nasal cavity"
+            },
+            {
+              "name": "Anatomy and disorders of external nose"
+            },
+            {
+              "name": "Complications of sinusitis"
+            },
+            {
+              "name": "Nasal septal disorders"
+            },
+            {
+              "name": "Nasal polyps"
+            },
+            {
+              "name": "Physiology of nose"
+            }
+          ]
+        },
+        {
+          "name": "Pharynx",
+          "lessons": [
+            {
+              "name": "Introduction to pharynx"
+            },
+            {
+              "name": "Nasopharynx"
+            },
+            {
+              "name": "Hypopharynx"
+            },
+            {
+              "name": "Oropharynx"
+            },
+            {
+              "name": "Layers of cervical fascia"
+            },
+            {
+              "name": "Deep neck spaces"
+            }
+          ]
+        },
+        {
+          "name": "Larynx",
+          "lessons": [
+            {
+              "name": "Embryology of larynx"
+            },
+            {
+              "name": "Structural anatomy of larynx"
+            },
+            {
+              "name": "Acute and chronic inflammation of larynx"
+            },
+            {
+              "name": "Benign lesions of larynx"
+            },
+            {
+              "name": "Vocal fold palsy"
+            },
+            {
+              "name": "Carcinoma larynx"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "Maneuver for diagnosis and treatment of BPPV"
+            },
+            {
+              "name": "ENT examination by head mirror"
+            },
+            {
+              "name": "Anterior rhinoscopy"
+            },
+            {
+              "name": "Posterior rhinoscopy"
+            },
+            {
+              "name": "Indirect laryngoscopy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Psychiatry",
+      "category": "Clinical",
+      "mcq_count": 4442,
+      "source_subjects": [
+        "Psychiatry"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Radiology",
+      "category": "Clinical",
+      "mcq_count": 4395,
+      "source_subjects": [
+        "Radiology"
+      ],
+      "topics": [
+        {
+          "name": "X-rays",
+          "lessons": [
+            {
+              "name": "X-ray: Basic concepts"
+            }
+          ]
+        },
+        {
+          "name": "CT Scan",
+          "lessons": [
+            {
+              "name": "CT: Basic concepts"
+            }
+          ]
+        },
+        {
+          "name": "Magnetic Resonance Imaging",
+          "lessons": [
+            {
+              "name": "MRI: Basic concepts"
+            }
+          ]
+        },
+        {
+          "name": "Ultrasound",
+          "lessons": [
+            {
+              "name": "Ultrasound: Basic concepts"
+            }
+          ]
+        },
+        {
+          "name": "Thumb Rules",
+          "lessons": [
+            {
+              "name": "Radiological investigations and thumb rules"
+            }
+          ]
+        },
+        {
+          "name": "Angiography, DSA. Interventional Radiology",
+          "lessons": [
+            {
+              "name": "Interventional Radiology"
+            }
+          ]
+        },
+        {
+          "name": "Contrast Agents",
+          "lessons": [
+            {
+              "name": "Contrast media"
+            }
+          ]
+        },
+        {
+          "name": "Gastrointestinal radiology",
+          "lessons": [
+            {
+              "name": "GI Radiology"
+            }
+          ]
+        },
+        {
+          "name": "Hepatobiliary Radiology",
+          "lessons": [
+            {
+              "name": "Hepatobiliary radiology"
+            }
+          ]
+        },
+        {
+          "name": "Pancreatic Radiology",
+          "lessons": [
+            {
+              "name": "Pancreatic radiology"
+            }
+          ]
+        },
+        {
+          "name": "Genitourinary Radiology",
+          "lessons": [
+            {
+              "name": "Genitourinary radiology"
+            }
+          ]
+        },
+        {
+          "name": "Neuroradiology",
+          "lessons": [
+            {
+              "name": "Neuroradiology Part 1"
+            },
+            {
+              "name": "Neuroradiology Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Musculoskeletal Radiology",
+          "lessons": [
+            {
+              "name": "Arthritis Bone tumors"
+            },
+            {
+              "name": "Musculoskeletal radiology"
+            }
+          ]
+        },
+        {
+          "name": "Women Imaging",
+          "lessons": [
+            {
+              "name": "Women’s Imaging"
+            }
+          ]
+        },
+        {
+          "name": "Cardiovascular Radiology",
+          "lessons": [
+            {
+              "name": "CVS Radiology"
+            },
+            {
+              "name": "Approach to CHD"
+            }
+          ]
+        },
+        {
+          "name": "Clinical Essentials",
+          "lessons": [
+            {
+              "name": "E-Fast"
+            }
+          ]
+        },
+        {
+          "name": "Respiratory Radiology",
+          "lessons": [
+            {
+              "name": "Respiratory Radiology"
+            }
+          ]
+        },
+        {
+          "name": "Nuclear Medicine",
+          "lessons": [
+            {
+              "name": "Nuclear Medicine"
+            }
+          ]
+        },
+        {
+          "name": "Radiotherapy",
+          "lessons": [
+            {
+              "name": "Radiotherapy Part 1"
+            },
+            {
+              "name": "Radiotherapy Part 2"
+            }
+          ]
+        },
+        {
+          "name": "Radiological Anatomy",
+          "lessons": [
+            {
+              "name": "Radiological Anatomy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Anesthesia",
+      "category": "Clinical",
+      "mcq_count": 3172,
+      "source_subjects": [
+        "Anaesthesia"
+      ],
+      "topics": []
+    },
+    {
+      "name": "Orthopedics",
+      "category": "Clinical",
+      "mcq_count": 2999,
+      "source_subjects": [
+        "Orthopaedics"
+      ],
+      "topics": [
+        {
+          "name": "Bone and Imaging",
+          "lessons": [
+            {
+              "name": "Bone Structure"
+            },
+            {
+              "name": "Parathyroid- Hormone on Bone"
+            },
+            {
+              "name": "Approach to Normal Limb X Rays in Orthopaedics"
+            }
+          ]
+        },
+        {
+          "name": "Bone and Joint Infections",
+          "lessons": [
+            {
+              "name": "Osteomyelitis"
+            },
+            {
+              "name": "Chronic Osteomyelitis"
+            },
+            {
+              "name": "Joint and Soft Tissue Infections"
+            }
+          ]
+        },
+        {
+          "name": "Tuberculosis of Bone and Joints",
+          "lessons": [
+            {
+              "name": "Tuberculosis of Bone and Joints"
+            }
+          ]
+        },
+        {
+          "name": "Orthopaedics Oncology",
+          "lessons": [
+            {
+              "name": "General Principles of Bone Tumors"
+            },
+            {
+              "name": "Benign Bone Tumors"
+            },
+            {
+              "name": "Malignant Bone Tumors"
+            }
+          ]
+        },
+        {
+          "name": "Nerve Injuries",
+          "lessons": [
+            {
+              "name": "Nerve Injuries I"
+            },
+            {
+              "name": "Nerve Injuries II"
+            }
+          ]
+        },
+        {
+          "name": "General + Upper Limb Traumatology",
+          "lessons": [
+            {
+              "name": "Trauma General"
+            },
+            {
+              "name": "Upper Limb- I"
+            },
+            {
+              "name": "Upper Limb- II"
+            }
+          ]
+        },
+        {
+          "name": "Spine + Pelvis + Lower Limb Traumatology",
+          "lessons": [
+            {
+              "name": "Spine"
+            },
+            {
+              "name": "Pelvis and Lower Limb"
+            },
+            {
+              "name": "Fracture Management"
+            }
+          ]
+        },
+        {
+          "name": "Arthritis",
+          "lessons": [
+            {
+              "name": "Joint Disorders"
+            }
+          ]
+        },
+        {
+          "name": "Metabolic Disorders",
+          "lessons": [
+            {
+              "name": "Metabolic Disorders-I"
+            },
+            {
+              "name": "Metabolic Disorders-II"
+            }
+          ]
+        },
+        {
+          "name": "Sports Injury & NM Disorders",
+          "lessons": [
+            {
+              "name": "Amputations and Sports Injury"
+            },
+            {
+              "name": "Neuromuscular Disorders"
+            }
+          ]
+        },
+        {
+          "name": "Pediatric Orthopedics",
+          "lessons": [
+            {
+              "name": "Pediatric Orthopaedics-I"
+            },
+            {
+              "name": "Pediatric Orthopaedics-II"
+            }
+          ]
+        },
+        {
+          "name": "Anesthesia",
+          "lessons": [
+            {
+              "name": "History of Anaesthesia"
+            },
+            {
+              "name": "Introduction of Anaesthesia"
+            },
+            {
+              "name": "Pre-Anaesthetic Evaluation"
+            },
+            {
+              "name": "Monitoring in Anaesthesia"
+            },
+            {
+              "name": "Anesthesia Machine"
+            },
+            {
+              "name": "Anaesthesia Circuit"
+            },
+            {
+              "name": "Airway"
+            },
+            {
+              "name": "Mechanical Ventilation"
+            },
+            {
+              "name": "Inhalational Anaesthetic Agents Part-I"
+            },
+            {
+              "name": "Inhalational Anaesthetic Agents Part-II"
+            },
+            {
+              "name": "Intravenous Anaesthetic Agents"
+            },
+            {
+              "name": "Opioids"
+            },
+            {
+              "name": "Neuromuscular Blockers"
+            },
+            {
+              "name": "Regional Anesthesia"
+            },
+            {
+              "name": "Central Neuraxial Blockade"
+            },
+            {
+              "name": "Perioperative Fluids"
+            },
+            {
+              "name": "Post Anaesthesia Care Unit and Scoring"
+            },
+            {
+              "name": "Oxygen Therapy"
+            },
+            {
+              "name": "Cardiopulmonary Resuscitation"
+            },
+            {
+              "name": "Brain Death"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dermatology",
+      "category": "Clinical",
+      "mcq_count": 1771,
+      "source_subjects": [
+        "Skin"
+      ],
+      "topics": [
+        {
+          "name": "Introduction to Dermatology",
+          "lessons": [
+            {
+              "name": "Basics of Dermatology, Cells of Epidermis"
+            },
+            {
+              "name": "Level of Epidermis"
+            },
+            {
+              "name": "Histopathological Findings"
+            },
+            {
+              "name": "Basement Membrane Zone"
+            },
+            {
+              "name": "Dermis and Subcutaneous Layer"
+            },
+            {
+              "name": "Structure of Hair, Hair Disorders"
+            },
+            {
+              "name": "Disorders of Nails"
+            },
+            {
+              "name": "Structure of Sweat Glands and Related Disorders"
+            },
+            {
+              "name": "Sebaceous Gland"
+            },
+            {
+              "name": "Acne Vulgaris"
+            },
+            {
+              "name": "Chemical Peeling"
+            },
+            {
+              "name": "Skin Lesions"
+            }
+          ]
+        },
+        {
+          "name": "Blistering Disorders",
+          "lessons": [
+            {
+              "name": "Blistering Disorders"
+            }
+          ]
+        },
+        {
+          "name": "Pigmentary Disorders",
+          "lessons": [
+            {
+              "name": "Pigmentary Disorders"
+            }
+          ]
+        },
+        {
+          "name": "Bacterial Infections",
+          "lessons": [
+            {
+              "name": "Bacterial Infections"
+            }
+          ]
+        },
+        {
+          "name": "Fungal Infections",
+          "lessons": [
+            {
+              "name": "Fungal Infections"
+            }
+          ]
+        },
+        {
+          "name": "Mycobacterial Infections",
+          "lessons": [
+            {
+              "name": "Mycobacterial Infections"
+            }
+          ]
+        },
+        {
+          "name": "Viral Infections",
+          "lessons": [
+            {
+              "name": "Viral Infections"
+            }
+          ]
+        },
+        {
+          "name": "Sexually Transmitted Infections",
+          "lessons": [
+            {
+              "name": "Sexually Transmitted Infections"
+            }
+          ]
+        },
+        {
+          "name": "Papulosquamous Disorders",
+          "lessons": [
+            {
+              "name": "Papulosquamous Disorders"
+            }
+          ]
+        },
+        {
+          "name": "Miscellaneous Disorders",
+          "lessons": [
+            {
+              "name": "Miscellaneous Disorders"
+            },
+            {
+              "name": "Skin Tumors"
+            }
+          ]
+        },
+        {
+          "name": "Psychiatry",
+          "lessons": [
+            {
+              "name": "Organic Mental Disorders"
+            },
+            {
+              "name": "Personality Disorders"
+            },
+            {
+              "name": "Eating Disorders"
+            },
+            {
+              "name": "Sleep Disorders"
+            },
+            {
+              "name": "Sexual Disorders"
+            },
+            {
+              "name": "Basics of Psychiatry"
+            },
+            {
+              "name": "Schizophrenia Spectrum and Other Psychotic Disorders"
+            },
+            {
+              "name": "Mood Disorders"
+            },
+            {
+              "name": "Neurotic Stress-Related and Somatoform Disorders"
+            },
+            {
+              "name": "Substance Related and Addictive Disorders"
+            },
+            {
+              "name": "Child Psychiatry"
+            },
+            {
+              "name": "Psychoanalysis"
+            },
+            {
+              "name": "Mental Health Care Act 2017"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "syllabus_enriched_at": "2026-06-04T04:46:36.699571+00:00",
+  "syllabus_source": "https://www.prepladder.com/neet-pg-study-material/syllabus/neet-pg-syllabus-detailed-subject-wise-topics"
+}

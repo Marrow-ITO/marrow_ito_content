@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ qbank.title }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        {% if subject %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+        {% endif %}
+        {% if topic %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.topic_detail', topic_id=topic.id) }}">{{ topic.name }}</a>
+        {% endif %}
+        {% if lesson %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.lesson_detail', lesson_id=lesson.id) }}">{{ lesson.name }}</a>
+        {% endif %}
+        <span class="sep">/</span>
+        {{ qbank.title }}
+    </nav>
+    <h1>{{ qbank.title }}</h1>
+    <h2>MCQs</h2>
+    {% if mcqs %}
+        <ul class="entity-list">
+            {% for m in mcqs %}
+                <li>
+                    <a href="{{ url_for('browse.mcq_detail', mcq_id=m.id) }}">{{ m.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">No MCQs in this qbank.</p>
+    {% endif %}
+{% endblock %}

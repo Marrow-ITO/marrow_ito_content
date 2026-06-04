@@ -1,0 +1,16 @@
+[project]
+name = "marrow-ito-search"
+version = "0.1.0"
+description = "Standalone Flask app for prototyping semantic search across MCQ/QBank/Video/Test content"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0.0",
+    "pymongo>=4.6.0",
+    "pydantic>=2.6.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[tool.uv]
+package = false

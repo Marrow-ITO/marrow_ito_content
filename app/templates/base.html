@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Marrow-ito-search{% endblock %}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            color: #1f2328;
+            line-height: 1.5;
+        }
+        a { color: #0969da; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        nav.crumbs { font-size: 0.9rem; color: #57606a; margin-bottom: 1.5rem; }
+        nav.crumbs a { color: #57606a; }
+        nav.crumbs span.sep { margin: 0 0.4rem; color: #8c959f; }
+        h1, h2, h3 { color: #1f2328; }
+        h1 { margin-top: 0; }
+        ul.entity-list { list-style: none; padding: 0; }
+        ul.entity-list li {
+            padding: 0.6rem 0.9rem;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            background: #fff;
+        }
+        ul.entity-list li .meta { color: #57606a; font-size: 0.85rem; }
+        .empty { color: #57606a; font-style: italic; padding: 1rem 0; }
+        .section { margin-top: 2rem; }
+        .mcq-card {
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #fff;
+        }
+        .mcq-options { list-style: lower-alpha; padding-left: 1.5rem; }
+        .mcq-options li { padding: 0.25rem 0; }
+        .mcq-options li.correct { font-weight: 600; color: #1a7f37; }
+        .explanation {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f6f8fa;
+            border-left: 3px solid #1a7f37;
+            border-radius: 4px;
+        }
+        header.top {
+            border-bottom: 1px solid #d0d7de;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        header.top a { font-weight: 600; }
+    </style>
+</head>
+<body>
+    <header class="top">
+        <a href="{{ url_for('browse.index') }}">Marrow-ito-search</a>
+        &nbsp;·&nbsp;
+        <a href="{{ url_for('browse.tests_list') }}">Tests</a>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>

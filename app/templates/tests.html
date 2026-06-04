@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Tests · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        Tests
+    </nav>
+    <h1>Tests</h1>
+    {% if tests %}
+        <ul class="entity-list">
+            {% for t in tests %}
+                <li>
+                    <a href="{{ url_for('browse.test_detail', test_id=t.id) }}">{{ t.title }}</a>
+                    <span class="meta"> · {{ t.mcq_ids|length }} MCQ{{ '' if t.mcq_ids|length == 1 else 's' }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">No tests yet.</p>
+    {% endif %}
+{% endblock %}

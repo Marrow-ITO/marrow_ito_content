@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ video.title }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        {% if subject %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+        {% endif %}
+        {% if topic %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.topic_detail', topic_id=topic.id) }}">{{ topic.name }}</a>
+        {% endif %}
+        {% if lesson %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.lesson_detail', lesson_id=lesson.id) }}">{{ lesson.name }}</a>
+        {% endif %}
+        <span class="sep">/</span>
+        Video
+    </nav>
+
+    <h1>{{ video.title }}</h1>
+    {% if video.duration_seconds %}
+        <p class="meta">Duration: {{ video.duration_seconds }} seconds</p>
+    {% endif %}
+    {% if video.url %}
+        <p><a href="{{ video.url }}" target="_blank" rel="noopener">Open video URL</a></p>
+    {% endif %}
+    {% if video.description %}
+        <div class="section">
+            <h3>Description</h3>
+            <p>{{ video.description }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

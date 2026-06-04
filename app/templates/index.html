@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Subjects · Marrow-ito-search{% endblock %}
+{% block content %}
+    <h1>Subjects</h1>
+    {% if subjects %}
+        <ul class="entity-list">
+            {% for s in subjects %}
+                <li>
+                    <a href="{{ url_for('browse.subject_detail', subject_id=s.id) }}">{{ s.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">No subjects yet.</p>
+    {% endif %}
+{% endblock %}

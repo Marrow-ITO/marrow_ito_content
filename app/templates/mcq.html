@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}MCQ · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        {% if subject %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+        {% endif %}
+        {% if topic %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.topic_detail', topic_id=topic.id) }}">{{ topic.name }}</a>
+        {% endif %}
+        {% if lesson %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.lesson_detail', lesson_id=lesson.id) }}">{{ lesson.name }}</a>
+        {% endif %}
+        {% if qbank %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.qbank_detail', qbank_id=qbank.id) }}">{{ qbank.title }}</a>
+        {% endif %}
+        <span class="sep">/</span>
+        MCQ
+    </nav>
+
+    <div class="mcq-card">
+        <h2>{{ mcq.title }}</h2>
+        <ol class="mcq-options">
+            <li class="{% if mcq.answer.value == 'option_1' %}correct{% endif %}">{{ mcq.option_1 }}</li>
+            <li class="{% if mcq.answer.value == 'option_2' %}correct{% endif %}">{{ mcq.option_2 }}</li>
+            <li class="{% if mcq.answer.value == 'option_3' %}correct{% endif %}">{{ mcq.option_3 }}</li>
+            <li class="{% if mcq.answer.value == 'option_4' %}correct{% endif %}">{{ mcq.option_4 }}</li>
+        </ol>
+        <div class="explanation">
+            <strong>Explanation:</strong>
+            <div>{{ mcq.answer_desc }}</div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ test.title }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        <a href="{{ url_for('browse.tests_list') }}">Tests</a>
+        <span class="sep">/</span>
+        {{ test.title }}
+    </nav>
+    <h1>{{ test.title }}</h1>
+    {% if mcqs %}
+        {% for m in mcqs %}
+            <div class="mcq-card">
+                <h3><a href="{{ url_for('browse.mcq_detail', mcq_id=m.id) }}">{{ m.title }}</a></h3>
+                <ol class="mcq-options">
+                    <li class="{% if m.answer.value == 'option_1' %}correct{% endif %}">{{ m.option_1 }}</li>
+                    <li class="{% if m.answer.value == 'option_2' %}correct{% endif %}">{{ m.option_2 }}</li>
+                    <li class="{% if m.answer.value == 'option_3' %}correct{% endif %}">{{ m.option_3 }}</li>
+                    <li class="{% if m.answer.value == 'option_4' %}correct{% endif %}">{{ m.option_4 }}</li>
+                </ol>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="empty">No MCQs in this test.</p>
+    {% endif %}
+{% endblock %}

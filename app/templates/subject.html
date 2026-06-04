@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}{{ subject.name }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        {{ subject.name }}
+    </nav>
+    <h1>{{ subject.name }}</h1>
+    <h2>Topics</h2>
+    {% if topics %}
+        <ul class="entity-list">
+            {% for t in topics %}
+                <li>
+                    <a href="{{ url_for('browse.topic_detail', topic_id=t.id) }}">{{ t.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">No topics under this subject.</p>
+    {% endif %}
+{% endblock %}

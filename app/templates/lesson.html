@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ lesson.name }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        {% if subject %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+        {% endif %}
+        {% if topic %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.topic_detail', topic_id=topic.id) }}">{{ topic.name }}</a>
+        {% endif %}
+        <span class="sep">/</span>
+        {{ lesson.name }}
+    </nav>
+    <h1>{{ lesson.name }}</h1>
+
+    <div class="section">
+        <h2>QBanks</h2>
+        {% if qbanks %}
+            <ul class="entity-list">
+                {% for q in qbanks %}
+                    <li>
+                        <a href="{{ url_for('browse.qbank_detail', qbank_id=q.id) }}">{{ q.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty">No qbanks for this lesson.</p>
+        {% endif %}
+    </div>
+
+    <div class="section">
+        <h2>Videos</h2>
+        {% if videos %}
+            <ul class="entity-list">
+                {% for v in videos %}
+                    <li>
+                        <a href="{{ url_for('browse.video_detail', video_id=v.id) }}">{{ v.title }}</a>
+                        {% if v.duration_seconds %}
+                            <span class="meta"> · {{ v.duration_seconds }}s</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="empty">No videos for this lesson.</p>
+        {% endif %}
+    </div>
+{% endblock %}

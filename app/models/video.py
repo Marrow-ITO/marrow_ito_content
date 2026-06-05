@@ -10,6 +10,10 @@ class Video(BaseDoc):
     lesson_id: PyObjectId
     # Inline `[mm:ss] text` lines. Source-of-truth for transcript search.
     video_transcript_raw: str | None = None
+    # Base64-encoded thumbnail uploaded via the edit form; surfaced as a
+    # data-URI `thumbnail_url` in /api/search timestamp results.
+    thumbnail: str | None = None
+    thumbnail_mime_type: str | None = None
 
 
 class VideoNote(BaseDoc):

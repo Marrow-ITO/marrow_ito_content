@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Edit {{ update.update_topic }} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        <a href="{{ url_for('crud.recent_update_list') }}">Recent updates</a>
+        <span class="sep">/</span>
+        Edit
+    </nav>
+
+    <h1>{{ update.update_topic }}</h1>
+    <div class="meta" style="font-size:0.9rem; margin-bottom: 1rem;">
+        {{ update.subject_name or '—' }}
+        {% if update.date_of_update %}<span style="color:#8c959f;">·</span> {{ update.date_of_update }}{% endif %}
+    </div>
+
+    {% if update.content %}
+        <p style="color:#1f2328; margin-bottom: 1.5rem;">{{ update.content }}</p>
+    {% endif %}
+
+    <form method="post" class="form-block" enctype="multipart/form-data">
+        <label for="thumbnail">Thumbnail</label>
+        {% if update.thumbnail %}
+            <div style="margin: 0.4rem 0;">
+                <img src="data:{{ update.thumbnail_mime_type or 'image/png' }};base64,{{ update.thumbnail }}"
+                     alt="Current thumbnail"
+                     style="max-width: 200px; max-height: 120px; border-radius: 4px; border: 1px solid #d0d7de;">
+                <p style="margin: 0.3rem 0 0; color:#57606a; font-size:0.78rem;">
+                    Pick a new file to replace; leave blank to keep the current one.
+                </p>
+            </div>
+        {% endif %}
+        <input id="thumbnail" name="thumbnail" type="file" accept="image/*" required>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save thumbnail</button>
+            <a class="btn" href="{{ url_for('crud.recent_update_list') }}">Cancel</a>
+        </div>
+
+        <p style="margin-top: 1rem; color:#57606a; font-size:0.78rem;">
+            Other fields (topic, content, date, source) are ingested from the source JSON and not editable here.
+        </p>
+    </form>
+{% endblock %}

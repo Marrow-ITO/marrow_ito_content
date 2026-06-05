@@ -33,6 +33,24 @@ from app.repositories import (
 SEARCH_DOCS = "search_documents"
 
 
+def _read_thumbnail(thumbnail_file) -> tuple[str, str] | None:
+    """Read an uploaded thumbnail and return (base64_str, mime_type).
+
+    Returns None when the file slot is empty (browser sends an empty
+    FileStorage when nothing is picked). Raises ValueError if the
+    uploaded file isn't an image.
+    """
+    if not thumbnail_file or not getattr(thumbnail_file, "filename", ""):
+        return None
+    mime_type = (getattr(thumbnail_file, "mimetype", "") or "").lower()
+    if not mime_type.startswith("image/"):
+        raise ValueError(f"Thumbnail must be an image (got {mime_type!r}).")
+    data = thumbnail_file.read()
+    if not data:
+        return None
+    return base64.b64encode(data).decode("ascii"), mime_type
+
+
 # ---------- Subject ----------
 
 def create_subject(name: str) -> ObjectId:
@@ -165,15 +183,28 @@ def create_lesson(topic_id: str | ObjectId, name: str) -> ObjectId:
     return lesson_id
 
 
-def update_lesson(lesson_id: str | ObjectId, name: str) -> bool:
-    """Update a lesson name AND keep the linked qbank's title in sync."""
+def update_lesson(
+    lesson_id: str | ObjectId,
+    name: str,
+    thumbnail_file=None,
+) -> bool:
+    """Update a lesson name AND keep the linked qbank's title in sync.
+
+    `thumbnail_file` is an optional uploaded image (Werkzeug FileStorage).
+    When provided, it replaces any existing thumbnail. Leaving it empty
+    keeps whatever's already stored.
+    """
     name = name.strip()
     if not name:
         raise ValueError("Lesson name is required.")
     lesson_oid = lesson_id if isinstance(lesson_id, ObjectId) else ObjectId(lesson_id)
-    matched = LessonRepo().update_fields(
-        lesson_oid, {"name": name, "name_lower": name.lower()}
-    )
+
+    updates: dict = {"name": name, "name_lower": name.lower()}
+    thumb = _read_thumbnail(thumbnail_file)
+    if thumb is not None:
+        updates["thumbnail"], updates["thumbnail_mime_type"] = thumb
+
+    matched = LessonRepo().update_fields(lesson_oid, updates)
     if matched:
         get_db()[Collections.qbanks].update_many(
             {"lesson_id": lesson_oid},
@@ -276,7 +307,11 @@ def create_video(lesson_id: str | ObjectId, form: dict) -> ObjectId:
     return VideoRepo().insert(video)
 
 
-def update_video(video_id: str | ObjectId, form: dict) -> bool:
+def update_video(
+    video_id: str | ObjectId,
+    form: dict,
+    thumbnail_file=None,
+) -> bool:
     title = (form.get("title") or "").strip()
     if not title:
         raise ValueError("Video title is required.")
@@ -289,6 +324,9 @@ def update_video(video_id: str | ObjectId, form: dict) -> bool:
         "duration_seconds": int(duration_raw) if duration_raw.isdigit() else None,
         "video_transcript_raw": (form.get("video_transcript_raw") or "").strip() or None,
     }
+    thumb = _read_thumbnail(thumbnail_file)
+    if thumb is not None:
+        updates["thumbnail"], updates["thumbnail_mime_type"] = thumb
     return VideoRepo().update_fields(video_id, updates)
 
 
@@ -335,3 +373,25 @@ def add_video_note(
 
 def delete_video_note(note_id: str | ObjectId) -> bool:
     return VideoNoteRepo().delete(note_id)
+
+
+# ---------- Recent updates ----------
+
+def update_recent_update_thumbnail(
+    update_id: str | ObjectId,
+    thumbnail_file,
+) -> bool:
+    """Update only the thumbnail on a recent_update doc.
+
+    Recent updates are ingested from JSON; the edit UI only exposes the
+    thumbnail upload to keep the surface small.
+    """
+    thumb = _read_thumbnail(thumbnail_file)
+    if thumb is None:
+        # Treat "no file" as a no-op rather than an error.
+        return False
+    from app.repositories import RecentUpdateRepo  # local to avoid cycles
+    return RecentUpdateRepo().update_fields(
+        update_id,
+        {"thumbnail": thumb[0], "thumbnail_mime_type": thumb[1]},
+    )

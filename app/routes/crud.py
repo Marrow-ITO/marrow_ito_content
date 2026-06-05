@@ -17,6 +17,7 @@ from app.repositories import (
     LessonRepo,
     MCQRepo,
     QBankRepo,
+    RecentUpdateRepo,
     SubjectRepo,
     TopicRepo,
     VideoNoteRepo,
@@ -171,7 +172,11 @@ def lesson_edit(lesson_id: str):
     if request.method == "POST":
         name = request.form.get("name", "").strip()
         try:
-            crud.update_lesson(lesson_id, name)
+            crud.update_lesson(
+                lesson_id,
+                name,
+                thumbnail_file=request.files.get("thumbnail"),
+            )
         except ValueError as exc:
             flash(str(exc), "error")
             return render_template(
@@ -278,7 +283,11 @@ def video_edit(video_id: str):
     lesson = LessonRepo().get(video.lesson_id)
     if request.method == "POST":
         try:
-            crud.update_video(video_id, request.form)
+            crud.update_video(
+                video_id,
+                request.form,
+                thumbnail_file=request.files.get("thumbnail"),
+            )
         except ValueError as exc:
             flash(str(exc), "error")
             return render_template(
@@ -368,3 +377,42 @@ def video_note_delete(note_id: str):
     crud.delete_video_note(note_id)
     flash("Note deleted.", "success")
     return redirect(url_for("browse.video_detail", video_id=parent_video_id))
+
+
+# ============================================================
+# Recent updates
+# ============================================================
+
+@crud_bp.route("/recent-updates", methods=["GET"])
+def recent_update_list():
+    repo = RecentUpdateRepo()
+    updates = list(
+        repo.collection.find(
+            {},
+            {"update_topic": 1, "subject_name": 1, "date_of_update": 1, "thumbnail": 1},
+        ).sort([("date_of_update", -1)])
+    )
+    return render_template("recent_updates_list.html", updates=updates)
+
+
+@crud_bp.route("/recent-updates/<update_id>/edit", methods=["GET", "POST"])
+def recent_update_edit(update_id: str):
+    update = RecentUpdateRepo().get(update_id)
+    if not update:
+        abort(404)
+    if request.method == "POST":
+        try:
+            ok = crud.update_recent_update_thumbnail(
+                update_id, thumbnail_file=request.files.get("thumbnail")
+            )
+        except ValueError as exc:
+            flash(str(exc), "error")
+            return render_template("form_recent_update.html", update=update)
+        if ok:
+            flash("Thumbnail updated.", "success")
+        else:
+            flash("Please choose an image file.", "error")
+        return redirect(
+            url_for("crud.recent_update_edit", update_id=update_id)
+        )
+    return render_template("form_recent_update.html", update=update)

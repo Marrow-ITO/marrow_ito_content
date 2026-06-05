@@ -8,6 +8,7 @@ from flask import Blueprint, jsonify, request
 
 from app.services.api_search import search as do_search
 from app.services.concept_suggest import suggest as do_suggest
+from app.services.qbank_api import fetch_qbank
 from app.services.recent_update_api import fetch_recent_update
 from app.services.video_api import fetch_video
 
@@ -56,4 +57,12 @@ def recent_update_detail_endpoint(update_id: str):
     payload = fetch_recent_update(update_id)
     if payload is None:
         return jsonify({"error": "Recent update not found."}), 404
+    return jsonify(payload)
+
+
+@api_bp.route("/qbank/<qbank_id>", methods=["GET"])
+def qbank_detail_endpoint(qbank_id: str):
+    payload = fetch_qbank(qbank_id)
+    if payload is None:
+        return jsonify({"error": "QBank not found."}), 404
     return jsonify(payload)

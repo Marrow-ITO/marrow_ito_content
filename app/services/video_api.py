@@ -18,6 +18,7 @@ from app.repositories import (
     LessonRepo,
     SubjectRepo,
     TopicRepo,
+    VideoNoteRepo,
     VideoRepo,
 )
 
@@ -83,6 +84,11 @@ def fetch_video(video_id: str, start_time: int | None = None) -> dict | None:
     topic = TopicRepo().get(lesson.topic_id) if lesson else None
     subject = SubjectRepo().get(topic.subject_id) if topic else None
 
+    # Notes are returned sorted by `order` ASC — same path the Jinja UI
+    # uses to render the page-image strip. base64 `image_data` is sent
+    # raw so the client can compose `data:<mime>;base64,<image_data>`.
+    notes = VideoNoteRepo().list_by_video(video.id)
+
     payload: dict = {
         "id": str(video.id),
         "title": video.title,
@@ -97,6 +103,15 @@ def fetch_video(video_id: str, start_time: int | None = None) -> dict | None:
         "topic_name": topic.name if topic else None,
         "subject_id": str(subject.id) if subject else None,
         "subject_name": subject.name if subject else None,
+        "notes": [
+            {
+                "id": str(n.id),
+                "order": n.order,
+                "mime_type": n.mime_type,
+                "image_data": n.image_data,
+            }
+            for n in notes
+        ],
     }
 
     if start_time is not None:

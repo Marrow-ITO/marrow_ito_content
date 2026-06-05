@@ -30,3 +30,7 @@ class RecentUpdate(BaseDoc):
     update_topic: str
     content: str
     reference: dict = Field(default_factory=dict)
+    # Base64-encoded thumbnail uploaded via the edit form; surfaced as a
+    # data-URI `thumbnail_url` in /api/search recent_update results.
+    thumbnail: str | None = None
+    thumbnail_mime_type: str | None = None

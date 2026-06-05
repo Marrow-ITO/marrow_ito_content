@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Recent updates · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        Recent updates
+    </nav>
+    <h1>Recent updates</h1>
+
+    {% if updates %}
+        <ul class="entity-list">
+            {% for u in updates %}
+                <li style="display:flex; gap:0.8rem; align-items:flex-start;">
+                    {% if u.thumbnail %}
+                        <img src="data:{{ u.thumbnail_mime_type or 'image/png' }};base64,{{ u.thumbnail }}"
+                             alt="thumbnail"
+                             style="width: 80px; height: 60px; object-fit: cover; border-radius: 4px; border: 1px solid #d0d7de; flex-shrink: 0;">
+                    {% else %}
+                        <div style="width:80px; height:60px; background:#f6f8fa; border:1px dashed #d0d7de; border-radius:4px; flex-shrink:0;
+                                    display:flex; align-items:center; justify-content:center;
+                                    color:#8c959f; font-size:0.7rem;">no thumb</div>
+                    {% endif %}
+                    <div style="flex: 1;">
+                        <a href="{{ url_for('crud.recent_update_edit', update_id=u._id) }}">{{ u.update_topic }}</a>
+                        <div class="meta" style="font-size:0.85rem;">
+                            {{ u.subject_name or '—' }}
+                            {% if u.date_of_update %}<span style="color:#8c959f;">·</span> {{ u.date_of_update }}{% endif %}
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="empty">No recent updates ingested yet.</p>
+    {% endif %}
+{% endblock %}

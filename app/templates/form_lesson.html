@@ -19,9 +19,25 @@
     </nav>
     <h1>{% if lesson %}Edit lesson{% else %}New lesson in {{ topic.name }}{% endif %}</h1>
 
-    <form method="post" class="form-block">
+    <form method="post" class="form-block" enctype="multipart/form-data">
         <label for="name">Lesson name</label>
         <input id="name" name="name" type="text" value="{{ name }}" autofocus required>
+
+        {% if lesson %}
+            <label for="thumbnail">Thumbnail (optional)</label>
+            {% if lesson.thumbnail %}
+                <div style="margin: 0.4rem 0;">
+                    <img src="data:{{ lesson.thumbnail_mime_type or 'image/png' }};base64,{{ lesson.thumbnail }}"
+                         alt="Current thumbnail"
+                         style="max-width: 200px; max-height: 120px; border-radius: 4px; border: 1px solid #d0d7de;">
+                    <p style="margin: 0.3rem 0 0; color:#57606a; font-size:0.78rem;">
+                        Pick a new file to replace; leave blank to keep the current one.
+                    </p>
+                </div>
+            {% endif %}
+            <input id="thumbnail" name="thumbnail" type="file" accept="image/*">
+        {% endif %}
+
         <div class="form-actions">
             <button type="submit" class="btn btn-primary">
                 {% if lesson %}Save{% else %}Create{% endif %}
@@ -31,6 +47,7 @@
         {% if not lesson %}
             <p style="color:#57606a; font-size:0.85rem; margin-top:0.5rem;">
                 A QBank with the same name will be auto-created for this lesson.
+                You can add a thumbnail after creating it.
             </p>
         {% endif %}
     </form>

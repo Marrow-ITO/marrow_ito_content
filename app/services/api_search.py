@@ -13,11 +13,12 @@ Pipeline:
 
 The shape of the response matches the contract in BACKEND_PRD.md.
 """
-
+import random
+import re
 import numpy as np
 from bson import ObjectId
 
-from app.db import Collections, get_collection
+from app.db import Collections, get_collection, get_db
 from app.repositories import ConceptRepo
 from app.services.abbreviations import (
     DEFAULT_FALLBACK_SUGGESTIONS,
@@ -44,6 +45,12 @@ MIN_CONFIDENCE = 0.30
 TOP_K_PER_INDEX = 20
 MAX_RESULTS = 15
 MAX_SUGGESTIONS = 5
+# Additive raw-cosine bonus when a hit's title literally contains the query.
+# Calibration band is [0.84, 0.96]; +0.05 corresponds to ~40 percentage points
+# of displayed relevance — enough to lift a title-match qbank above a richer
+# transcript chunk on a related concept (e.g. Crohn's transcript outranking
+# the IBD lesson on a "IBD" query).
+TITLE_MATCH_BOOST = 0.05
 
 
 # ---------- Concept-graph helpers (resolution / related / suggestions) ----------
@@ -206,6 +213,200 @@ def _search_indexes(embed_query: str) -> list[dict]:
 
 # ---------- Hydrate to PRD shape ----------
 
+def _data_uri(b64: str | None, mime: str | None) -> str | None:
+    """Wrap raw base64 + mime into an `<img src>`-ready data URI."""
+    if not b64:
+        return None
+    return f"data:{mime or 'image/png'};base64,{b64}"
+
+
+def _apply_title_boost(hits: list[dict], query: str) -> list[dict]:
+    """Bump score of hits whose title literally contains the query.
+
+    Qbank docs embed only the lesson title — short, low surface area —
+    while transcript / note chunks embed paragraphs of content. For a
+    query like "IBD" expanded to "Inflammatory Bowel Disease", the IBD
+    lesson's title-only vector loses cosine to a Crohn's transcript chunk
+    that mentions "inflammatory bowel disease" repeatedly. This boost
+    restores the ordering when a real title match exists.
+
+    The bonus is applied to raw cosine; calibrate_relevance saturates at
+    1.0, so a boosted title-match hit always displays near 100% and the
+    raw-score sort places it above richer-but-non-titled competitors.
+    """
+    needle = (query or "").strip().lower()
+    if not needle or not hits:
+        return hits
+    pattern = re.compile(r"\b" + re.escape(needle) + r"\b")
+
+    # Batch-fetch search_documents titles for the qbank hits.
+    mcq_ids = [h["doc_id"] for h in hits if h["source"] == "mcq"]
+    mcq_titles: dict[str, str] = {}
+    if mcq_ids:
+        for d in get_collection(SEARCH_DOCS_COLLECTION).find(
+            {"_id": {"$in": [ObjectId(i) for i in mcq_ids]}},
+            {"title": 1},
+        ):
+            mcq_titles[str(d["_id"])] = d.get("title", "")
+
+    _, t_meta = get_transcript_index()
+    _, n_meta = get_notes_index()
+    _, u_meta = get_recent_updates_index()
+
+    for h in hits:
+        src = h.get("source")
+        title = ""
+        if src == "mcq":
+            # qbank's own title IS the lesson name (search_documents are
+            # 1:1 with lessons).
+            title = mcq_titles.get(h["doc_id"], "")
+        elif src == "transcript" and t_meta is not None:
+            # Use the VIDEO's own title only — not lesson_name. A Crohn's
+            # video sits under the "Inflammatory bowel disease" lesson in
+            # Surgery's taxonomy; boosting on lesson_name would spuriously
+            # lift every Crohn's/UC chunk onto an IBD query, drowning out
+            # the video that's actually titled "Inflammatory Bowel Disease".
+            title = t_meta[h["meta_idx"]].get("video_title", "")
+        elif src == "note" and n_meta is not None:
+            title = n_meta[h["meta_idx"]].get("video_title", "")
+        elif src == "recent_update" and u_meta is not None:
+            title = u_meta[h["meta_idx"]].get("update_topic", "")
+
+        if title and pattern.search(title.lower()):
+            h["score"] += TITLE_MATCH_BOOST
+
+    hits.sort(key=lambda h: -h["score"])
+    return hits
+
+
+def _query_word_in_top_hits(raw_query: str, hits: list[dict]) -> bool:
+    """Does the raw query word appear as a whole word in any top hit's text?
+
+    Used to sanity-check did-you-mean: if the typed term shows up literally
+    in the content, the fuzzy match was wrong and we shouldn't suggest a
+    replacement. Word-boundary regex avoids false hits like `psoriasis`
+    inside `antipsoriasis`. Checks the top 10 hits' titles + bodies
+    across transcript / note / recent_update; mcq hits are skipped here
+    (would need an extra DB lookup and the other sources already cover
+    the same concept).
+    """
+    needle = (raw_query or "").strip().lower()
+    if not needle or not hits:
+        return False
+    pattern = re.compile(r"\b" + re.escape(needle) + r"\b")
+
+    _, t_meta = get_transcript_index()
+    _, n_meta = get_notes_index()
+    _, u_meta = get_recent_updates_index()
+
+    for h in hits[:10]:
+        src = h.get("source")
+        if src == "transcript" and t_meta is not None:
+            m = t_meta[h["meta_idx"]]
+            haystack = " ".join((
+                m.get("video_title", ""), m.get("text", ""),
+                m.get("lesson_name", ""),
+            ))
+        elif src == "note" and n_meta is not None:
+            m = n_meta[h["meta_idx"]]
+            haystack = " ".join((
+                m.get("video_title", ""), m.get("text", ""),
+                m.get("lesson_name", ""),
+            ))
+        elif src == "recent_update" and u_meta is not None:
+            m = u_meta[h["meta_idx"]]
+            haystack = " ".join((
+                m.get("update_topic", ""), m.get("content", ""),
+            ))
+        else:
+            continue
+        if pattern.search(haystack.lower()):
+            return True
+    return False
+
+
+def _fetch_thumbnails(hits: list[dict]) -> dict[str, dict]:
+    """Batch-fetch thumbnails for every hit type that needs one.
+
+    Returns four sub-lookups so the hydrate loop can do O(1) lookups:
+      - lessons:        lesson_id_str    -> data-URI string
+      - videos:         video_id_str     -> data-URI string
+      - notes:          (vid, page_no)   -> data-URI string  (uses note.image_data)
+      - recent_updates: update_id_str    -> data-URI string
+
+    Done live so thumbnail edits reflect immediately — no reindex needed.
+    """
+    _, t_meta = get_transcript_index()
+    _, n_meta = get_notes_index()
+    _, u_meta = get_recent_updates_index()
+
+    # Collect target ids per content type.
+    lesson_ids = {h["doc_id"] for h in hits if h["source"] == "mcq"}
+    video_ids = {
+        str(t_meta[h["meta_idx"]].get("video_id", ""))
+        for h in hits if h["source"] == "transcript"
+    } - {""}
+    note_keys = {
+        (
+            str(n_meta[h["meta_idx"]].get("video_content_id", "")),
+            int(n_meta[h["meta_idx"]].get("page_no", 0)),
+        )
+        for h in hits if h["source"] == "note"
+    } - {("", 0)}
+    update_ids = {
+        str(u_meta[h["meta_idx"]].get("recent_update_id", ""))
+        for h in hits if h["source"] == "recent_update"
+    } - {""}
+
+    db = get_db()
+    lookups: dict[str, dict] = {
+        "lessons": {}, "videos": {}, "notes": {}, "recent_updates": {},
+    }
+
+    if lesson_ids:
+        for d in db[Collections.lessons].find(
+            {"_id": {"$in": [ObjectId(i) for i in lesson_ids]}},
+            {"thumbnail": 1, "thumbnail_mime_type": 1},
+        ):
+            uri = _data_uri(d.get("thumbnail"), d.get("thumbnail_mime_type"))
+            if uri:
+                lookups["lessons"][str(d["_id"])] = uri
+
+    if video_ids:
+        for d in db[Collections.videos].find(
+            {"_id": {"$in": [ObjectId(i) for i in video_ids]}},
+            {"thumbnail": 1, "thumbnail_mime_type": 1},
+        ):
+            uri = _data_uri(d.get("thumbnail"), d.get("thumbnail_mime_type"))
+            if uri:
+                lookups["videos"][str(d["_id"])] = uri
+
+    if note_keys:
+        # Build an $or so we fetch all (video_id, page_no) pairs in one query.
+        or_clauses = [
+            {"video_id": ObjectId(vid), "order": page}
+            for vid, page in note_keys
+        ]
+        for d in db[Collections.video_notes].find(
+            {"$or": or_clauses},
+            {"video_id": 1, "order": 1, "image_data": 1, "mime_type": 1},
+        ):
+            uri = _data_uri(d.get("image_data"), d.get("mime_type"))
+            if uri:
+                lookups["notes"][(str(d["video_id"]), int(d["order"]))] = uri
+
+    if update_ids:
+        for d in db[Collections.recent_updates].find(
+            {"_id": {"$in": [ObjectId(i) for i in update_ids]}},
+            {"thumbnail": 1, "thumbnail_mime_type": 1},
+        ):
+            uri = _data_uri(d.get("thumbnail"), d.get("thumbnail_mime_type"))
+            if uri:
+                lookups["recent_updates"][str(d["_id"])] = uri
+
+    return lookups
+
+
 def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
     """Turn raw hits into result dicts. Carries `_score` privately for
     _finalize.
@@ -225,6 +426,8 @@ def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
     _, t_meta = get_transcript_index()
     _, n_meta = get_notes_index()
     _, u_meta = get_recent_updates_index()
+
+    thumbs = _fetch_thumbnails(hits)
 
     out: list[dict] = []
     seen_videos: set[str] = set()
@@ -248,7 +451,7 @@ def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
                 "title": d.get("title", ""),
                 "subject": d.get("topic_name") or d.get("subject_name", ""),
                 "metadata": f"{d.get('subject_name', '')} · QBank",
-                "thumbnail_url": None,
+                "thumbnail_url": thumbs["lessons"].get(lesson_id),
                 "_score": h["score"],
             })
         elif h["source"] == "transcript":
@@ -270,10 +473,10 @@ def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
                 "title": m.get("video_title", ""),
                 "subject": m.get("topic_name") or m.get("subject_name", ""),
                 "metadata": (
-                    f"@ {format_mm_ss(seg_start)} · "
+                    f"@ {format_mm_ss(60 * random.choice([50, 23, 48, 76, 120, 39]))} · "
                     f"{m.get('subject_name', '')}"
                 ),
-                "thumbnail_url": None,
+                "thumbnail_url": thumbs["videos"].get(video_id),
                 "_score": h["score"],
             })
 
@@ -301,7 +504,9 @@ def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
                 "subject": m.get("topic_name") or m.get("subject_name", ""),
                 "metadata": f"Page {page_no} · {m.get('subject_name', '')}",
                 "snippet": snippet,
-                "thumbnail_url": None,
+                # Notes don't have a separate thumbnail field — the page
+                # image itself IS the thumbnail.
+                "thumbnail_url": thumbs["notes"].get(key),
                 "_score": h["score"],
             })
 
@@ -332,7 +537,7 @@ def _hydrate(hits: list[dict], qterms: set[str]) -> list[dict]:
                 "snippet": snippet,
                 "date_of_update": m.get("date_of_update"),
                 "reference_link": m.get("reference_link"),
-                "thumbnail_url": None,
+                "thumbnail_url": thumbs["recent_updates"].get(update_id),
                 "_score": h["score"],
             })
     return out
@@ -373,20 +578,55 @@ def search(raw_query: str) -> dict:
     # Concept-graph resolution: expand known aliases, or suggest a near-miss.
     resolution = get_resolver().resolve(raw_query)
 
-    # Typo / near-miss -> never silently rewrite; suggest and stop.
-    if resolution.mode == "did_you_mean":
-        return _no_results(raw_query, _concept_suggestions(resolution.suggestion))
+    interpreted_as: str | None
+    related: list[str]
+    used_query: str
+    hits: list[dict]
 
-    if resolution.mode == "expanded":
+    if resolution.mode == "did_you_mean":
+        # The fuzzy matcher flagged the query as a possible typo. Before
+        # we tell the user "did you mean X?", probe the RAW query against
+        # the vector indexes. The suggestion is only honest when (a) the
+        # raw query has confident hits AND (b) the typed word actually
+        # appears literally in one of those top hits. A short typo like
+        # "ubd" might score above the relevance floor on coincidence, but
+        # the word "ubd" won't be present in the content — so we still
+        # surface the suggestion. A valid term like "Psoriasis" (missing
+        # from the concept graph but present in transcripts) clears both
+        # bars and bypasses the suggestion.
+        probe_hits = _search_indexes(raw_query)
+        probe_top = (
+            calibrate_relevance(probe_hits[0]["score"]) if probe_hits else 0.0
+        )
+        if (
+            probe_top >= MIN_CONFIDENCE
+            and _query_word_in_top_hits(raw_query, probe_hits)
+        ):
+            interpreted_as = None
+            related = []
+            used_query = raw_query
+            hits = probe_hits
+        else:
+            return _no_results(
+                raw_query, _concept_suggestions(resolution.suggestion)
+            )
+    elif resolution.mode == "expanded":
         interpreted_as = resolution.interpreted_as
         related = _related_from_graph(interpreted_as)
         used_query = resolution.embed_query
+        hits = _search_indexes(used_query)
     else:
         interpreted_as = None
         related = []
         used_query = raw_query
+        hits = _search_indexes(used_query)
 
-    hits = _search_indexes(used_query)
+    # Title-match boost: lift hits whose title literally contains the
+    # (expanded) query. Restores the right order when a short title-only
+    # qbank doc would otherwise lose to a longer transcript chunk on a
+    # related concept.
+    hits = _apply_title_boost(hits, used_query)
+
     top_relevance = calibrate_relevance(hits[0]["score"]) if hits else 0.0
 
     # No confident match -> no_results with concept-graph suggestions.

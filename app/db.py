@@ -33,5 +33,8 @@ class Collections:
     lessons = "lessons"
     qbanks = "qbanks"
     videos = "videos"
+    video_notes = "video_notes"
     mcqs = "mcqs"
     tests = "tests"
+    concepts = "concepts"
+    recent_updates = "recent_updates"

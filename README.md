@@ -84,6 +84,26 @@ uv run python scripts/seed_taxonomy.py
 Re-running drops and recreates the four owned collections by default. Pass
 `--no-drop` to append instead.
 
+### 4. Ingest MCQs (semantic match to lessons)
+
+Samples MedMCQA records, embeds each MCQ via PubMedBERT, searches a per-subject
+FAISS index built from the seeded lessons, and inserts each MCQ into the
+matched lesson's qbank — but only if cosine similarity meets the threshold.
+Heavy deps (`torch`, `sentence-transformers`, `faiss-cpu`) live in a separate
+group and need a one-time install.
+
+```bash
+# One-time: install ingest deps (~700MB, includes PyTorch)
+uv sync --group ingest
+
+# Then run (first run downloads the embedding model ~500MB)
+uv run --group ingest python scripts/ingest_mcqs.py /path/to/medmcqa.jsonl
+# defaults: --sample-size 500 --threshold 0.6 \
+#           --model pritamdeka/S-PubMedBert-MS-MARCO
+```
+
+Re-runs dedupe by MedMCQA `id` (stored as `source_id` on the MCQ doc).
+
 ## Browse the data
 
 After seeding, open <http://127.0.0.1:5001> to walk the hierarchy:

@@ -73,7 +73,9 @@ def seed(data: dict) -> dict:
         if not subject_name:
             continue
 
-        subject_id = subject_repo.insert(Subject(name=subject_name))
+        subject_id = subject_repo.insert(
+            Subject(name=subject_name, name_lower=subject_name.lower())
+        )
         stats["subjects"] += 1
 
         topics = subject_data.get("topics", [])
@@ -87,7 +89,11 @@ def seed(data: dict) -> dict:
                 continue
 
             topic_id = topic_repo.insert(
-                Topic(name=topic_name, subject_id=subject_id)
+                Topic(
+                    name=topic_name,
+                    name_lower=topic_name.lower(),
+                    subject_id=subject_id,
+                )
             )
             stats["topics"] += 1
 
@@ -97,12 +103,20 @@ def seed(data: dict) -> dict:
                     continue
 
                 lesson_id = lesson_repo.insert(
-                    Lesson(name=lesson_name, topic_id=topic_id)
+                    Lesson(
+                        name=lesson_name,
+                        name_lower=lesson_name.lower(),
+                        topic_id=topic_id,
+                    )
                 )
                 stats["lessons"] += 1
 
                 qbank_repo.insert(
-                    QBank(title=lesson_name, lesson_id=lesson_id)
+                    QBank(
+                        title=lesson_name,
+                        title_lower=lesson_name.lower(),
+                        lesson_id=lesson_id,
+                    )
                 )
                 stats["qbanks"] += 1
 

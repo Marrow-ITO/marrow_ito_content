@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 {% block title %}Subjects · Marrow-ito-search{% endblock %}
 {% block content %}
-    <h1>Subjects</h1>
+    <h1>Subjects
+        <span class="actions">
+            <a class="btn btn-primary" href="{{ url_for('crud.subject_new') }}">+ Subject</a>
+        </span>
+    </h1>
     {% if subjects %}
         <ul class="entity-list">
             {% for s in subjects %}
+                {% set count = mcq_counts.get(s.id, 0) %}
+                {% set vcount = video_counts.get(s.id, 0) %}
                 <li>
                     <a href="{{ url_for('browse.subject_detail', subject_id=s.id) }}">{{ s.name }}</a>
+                    <span class="count-badge {% if not count %}zero{% endif %}">{{ count }} MCQ{{ '' if count == 1 else 's' }}</span>
+                    <span class="count-badge video {% if not vcount %}zero{% endif %}">{{ vcount }} video{{ '' if vcount == 1 else 's' }}</span>
                 </li>
             {% endfor %}
         </ul>

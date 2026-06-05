@@ -23,3 +23,6 @@ class MCQ(BaseDoc):
     topic_id: PyObjectId
     lesson_id: PyObjectId
     qbank_id: PyObjectId
+
+    source_id: str | None = None
+    match_similarity: float | None = None

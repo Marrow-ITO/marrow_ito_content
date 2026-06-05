@@ -14,15 +14,25 @@
         <span class="sep">/</span>
         {{ lesson.name }}
     </nav>
-    <h1>{{ lesson.name }}</h1>
+    <h1>{{ lesson.name }}
+        <span class="actions">
+            <a class="btn" href="{{ url_for('crud.lesson_edit', lesson_id=lesson.id) }}">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('crud.lesson_delete', lesson_id=lesson.id) }}"
+                  onsubmit="return confirm('Delete lesson {{ lesson.name }} and ALL its MCQs?');">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </span>
+    </h1>
 
     <div class="section">
         <h2>QBanks</h2>
         {% if qbanks %}
             <ul class="entity-list">
                 {% for q in qbanks %}
+                    {% set count = mcq_counts.get(q.id, 0) %}
                     <li>
                         <a href="{{ url_for('browse.qbank_detail', qbank_id=q.id) }}">{{ q.title }}</a>
+                        <span class="count-badge {% if not count %}zero{% endif %}">{{ count }} MCQ{{ '' if count == 1 else 's' }}</span>
                     </li>
                 {% endfor %}
             </ul>
@@ -32,7 +42,11 @@
     </div>
 
     <div class="section">
-        <h2>Videos</h2>
+        <h2>Videos
+            <span class="actions">
+                <a class="btn btn-primary" href="{{ url_for('crud.video_new', lesson_id=lesson.id) }}">+ Video</a>
+            </span>
+        </h2>
         {% if videos %}
             <ul class="entity-list">
                 {% for v in videos %}

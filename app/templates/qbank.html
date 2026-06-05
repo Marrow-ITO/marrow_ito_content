@@ -19,7 +19,11 @@
         {{ qbank.title }}
     </nav>
     <h1>{{ qbank.title }}</h1>
-    <h2>MCQs</h2>
+    <h2>MCQs
+        <span class="actions">
+            <a class="btn btn-primary" href="{{ url_for('crud.mcq_new', qbank_id=qbank.id) }}">+ MCQ</a>
+        </span>
+    </h2>
     {% if mcqs %}
         <ul class="entity-list">
             {% for m in mcqs %}

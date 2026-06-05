@@ -34,3 +34,21 @@ class BaseRepo(Generic[T]):
         payload.pop("_id", None)
         result = self.collection.insert_one(payload)
         return result.inserted_id
+
+    def update_fields(
+        self, doc_id: str | ObjectId, fields: dict
+    ) -> bool:
+        """Update specific fields on a document. Returns True if matched."""
+        if not fields:
+            return False
+        result = self.collection.update_one(
+            {"_id": self._to_object_id(doc_id)},
+            {"$set": fields},
+        )
+        return result.matched_count > 0
+
+    def delete(self, doc_id: str | ObjectId) -> bool:
+        result = self.collection.delete_one(
+            {"_id": self._to_object_id(doc_id)}
+        )
+        return result.deleted_count > 0

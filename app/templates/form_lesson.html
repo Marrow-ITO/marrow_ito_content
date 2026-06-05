@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{% if lesson %}Edit {{ lesson.name }}{% else %}New lesson{% endif %} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        {% if subject %}
+            <span class="sep">/</span>
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+        {% endif %}
+        <span class="sep">/</span>
+        <a href="{{ url_for('browse.topic_detail', topic_id=topic.id) }}">{{ topic.name }}</a>
+        <span class="sep">/</span>
+        {% if lesson %}
+            <a href="{{ url_for('browse.lesson_detail', lesson_id=lesson.id) }}">{{ lesson.name }}</a>
+            <span class="sep">/</span> Edit
+        {% else %}
+            New lesson
+        {% endif %}
+    </nav>
+    <h1>{% if lesson %}Edit lesson{% else %}New lesson in {{ topic.name }}{% endif %}</h1>
+
+    <form method="post" class="form-block">
+        <label for="name">Lesson name</label>
+        <input id="name" name="name" type="text" value="{{ name }}" autofocus required>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                {% if lesson %}Save{% else %}Create{% endif %}
+            </button>
+            <a class="btn" href="{% if lesson %}{{ url_for('browse.lesson_detail', lesson_id=lesson.id) }}{% else %}{{ url_for('browse.topic_detail', topic_id=topic.id) }}{% endif %}">Cancel</a>
+        </div>
+        {% if not lesson %}
+            <p style="color:#57606a; font-size:0.85rem; margin-top:0.5rem;">
+                A QBank with the same name will be auto-created for this lesson.
+            </p>
+        {% endif %}
+    </form>
+{% endblock %}

@@ -30,6 +30,20 @@
         ul.entity-list li .meta { color: #57606a; font-size: 0.85rem; }
         .empty { color: #57606a; font-style: italic; padding: 1rem 0; }
         .section { margin-top: 2rem; }
+        .count-badge {
+            display: inline-block;
+            background: #ddf4ff;
+            color: #0969da;
+            padding: 0.1rem 0.55rem;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-left: 0.5rem;
+            vertical-align: 1px;
+        }
+        .count-badge.zero { background: #f6f8fa; color: #8c959f; }
+        .count-badge.video { background: #fff1cf; color: #8a6500; }
+        .count-badge.video.zero { background: #f6f8fa; color: #8c959f; }
         .mcq-card {
             border: 1px solid #d0d7de;
             border-radius: 6px;
@@ -51,8 +65,103 @@
             border-bottom: 1px solid #d0d7de;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
         header.top a { font-weight: 600; }
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 480px;
+            margin-left: auto;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 0.4rem 0.7rem;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            box-sizing: border-box;
+        }
+        .search-box input:focus { outline: 2px solid #0969da; outline-offset: -1px; }
+        .ac-dropdown {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0; right: 0;
+            background: #fff;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-shadow: 0 4px 14px rgba(31,35,40,0.08);
+            max-height: 320px;
+            overflow-y: auto;
+            z-index: 50;
+            display: none;
+        }
+        .ac-dropdown.open { display: block; }
+        .ac-item {
+            padding: 0.45rem 0.7rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        .ac-item:hover, .ac-item.focused { background: #f6f8fa; }
+        .ac-type {
+            font-size: 0.7rem;
+            color: #57606a;
+            background: #f6f8fa;
+            padding: 0.05rem 0.35rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        .ac-empty { padding: 0.6rem 0.7rem; color: #8c959f; font-size: 0.85rem; }
+        .actions { display: inline-flex; gap: 0.4rem; margin-left: 0.5rem; vertical-align: 2px; }
+        .btn {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #d0d7de;
+            background: #f6f8fa;
+            color: #1f2328;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn:hover { background: #eef1f4; text-decoration: none; }
+        .btn-primary { background: #1f883d; color: #fff; border-color: #1f883d; }
+        .btn-primary:hover { background: #1a7f37; color: #fff; }
+        .btn-danger { background: #fff; color: #cf222e; border-color: #cf222e; }
+        .btn-danger:hover { background: #fdf4f5; color: #cf222e; }
+        .inline-form { display: inline; }
+        .flash {
+            padding: 0.6rem 0.9rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .flash-success { background: #dafbe1; color: #1a7f37; border: 1px solid #1f883d; }
+        .flash-error { background: #fdf4f5; color: #cf222e; border: 1px solid #cf222e; }
+        .form-block { max-width: 640px; }
+        .form-block label { display: block; margin: 0.8rem 0 0.25rem; font-size: 0.9rem; color: #57606a; }
+        .form-block input[type="text"],
+        .form-block textarea,
+        .form-block select {
+            width: 100%;
+            padding: 0.45rem 0.6rem;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+        .form-block textarea { min-height: 4rem; resize: vertical; }
+        .form-actions { margin-top: 1.5rem; display: flex; gap: 0.6rem; align-items: center; }
     </style>
 </head>
 <body>
@@ -60,7 +169,111 @@
         <a href="{{ url_for('browse.index') }}">Marrow-ito-search</a>
         &nbsp;·&nbsp;
         <a href="{{ url_for('browse.tests_list') }}">Tests</a>
+        &nbsp;·&nbsp;
+        <a href="{{ url_for('search.transcript_search_page') }}">Transcript search</a>
+        &nbsp;·&nbsp;
+        <a href="{{ url_for('concept_ui.suggest_ui') }}">Suggest API</a>
+        &nbsp;·&nbsp;
+        <a href="{{ url_for('concept_ui.search_ui') }}">Search API</a>
+        <form class="search-box" role="search" action="{{ url_for('search.search_page') }}" method="get" autocomplete="off">
+            <input
+                type="search"
+                name="q"
+                id="search-input"
+                placeholder="Search lessons, topics, MCQ content…"
+                value="{{ request.args.get('q', '') }}"
+                aria-label="Search"
+            >
+            <div class="ac-dropdown" id="ac-dropdown" role="listbox"></div>
+        </form>
     </header>
+
+    <script>
+    (function () {
+        const input = document.getElementById('search-input');
+        const dropdown = document.getElementById('ac-dropdown');
+        if (!input || !dropdown) return;
+
+        let timer = null;
+        let lastQuery = '';
+        let focusedIdx = -1;
+
+        const escapeHtml = (s) => s.replace(/[&<>"']/g, c =>
+            ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])
+        );
+
+        const render = (suggestions) => {
+            if (!suggestions.length) {
+                dropdown.innerHTML = '<div class="ac-empty">No matches.</div>';
+                dropdown.classList.add('open');
+                return;
+            }
+            dropdown.innerHTML = suggestions.map((s, i) => {
+                const href = s.type === 'lesson'
+                    ? `/lessons/${s.id}`
+                    : s.type === 'topic'
+                    ? `/topics/${s.id}`
+                    : `/subjects/${s.id}`;
+                return `<a class="ac-item" data-idx="${i}" href="${href}">`
+                     + `<span class="ac-type">${s.type}</span>`
+                     + `<span>${escapeHtml(s.name)}</span></a>`;
+            }).join('');
+            dropdown.classList.add('open');
+            focusedIdx = -1;
+        };
+
+        const fetchSuggestions = (q) => {
+            fetch(`/api/autocomplete?q=${encodeURIComponent(q)}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.q !== lastQuery) return;
+                    render(data.suggestions || []);
+                });
+        };
+
+        input.addEventListener('input', () => {
+            const q = input.value.trim();
+            lastQuery = q;
+            if (timer) clearTimeout(timer);
+            if (!q) { dropdown.classList.remove('open'); return; }
+            timer = setTimeout(() => fetchSuggestions(q), 120);
+        });
+
+        input.addEventListener('keydown', (e) => {
+            const items = dropdown.querySelectorAll('.ac-item');
+            if (!dropdown.classList.contains('open') || !items.length) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                focusedIdx = (focusedIdx + 1) % items.length;
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                focusedIdx = (focusedIdx - 1 + items.length) % items.length;
+            } else if (e.key === 'Enter' && focusedIdx >= 0) {
+                e.preventDefault();
+                items[focusedIdx].click();
+                return;
+            } else if (e.key === 'Escape') {
+                dropdown.classList.remove('open');
+                return;
+            } else { return; }
+            items.forEach((el, i) => el.classList.toggle('focused', i === focusedIdx));
+            items[focusedIdx]?.scrollIntoView({ block: 'nearest' });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && e.target !== input) {
+                dropdown.classList.remove('open');
+            }
+        });
+    })();
+    </script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
 </body>
 </html>

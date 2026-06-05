@@ -24,6 +24,13 @@
     </nav>
 
     <div class="mcq-card">
+        <div class="actions" style="float: right; margin: 0;">
+            <a class="btn" href="{{ url_for('crud.mcq_edit', mcq_id=mcq.id) }}">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('crud.mcq_delete', mcq_id=mcq.id) }}"
+                  onsubmit="return confirm('Delete this MCQ?');">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
         <h2>{{ mcq.title }}</h2>
         <ol class="mcq-options">
             <li class="{% if mcq.answer.value == 'option_1' %}correct{% endif %}">{{ mcq.option_1 }}</li>

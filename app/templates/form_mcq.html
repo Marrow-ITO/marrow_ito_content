@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{% if mcq %}Edit MCQ{% else %}New MCQ{% endif %} · Marrow-ito-search{% endblock %}
+{% block content %}
+    {% set src = form if form else mcq %}
+    {% macro field_value(name) -%}
+        {% if form and (form.get(name) or form.get(name) == "") %}{{ form.get(name) }}
+        {%- elif mcq %}{{ mcq[name] if name != 'answer' else mcq.answer.value }}{% endif %}
+    {%- endmacro %}
+
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        <a href="{{ url_for('browse.qbank_detail', qbank_id=qbank.id) }}">{{ qbank.title }}</a>
+        <span class="sep">/</span>
+        {% if mcq %}Edit MCQ{% else %}New MCQ{% endif %}
+    </nav>
+    <h1>{% if mcq %}Edit MCQ{% else %}New MCQ{% endif %}</h1>
+
+    <form method="post" class="form-block">
+        <label for="title">Question stem</label>
+        <textarea id="title" name="title" required>{{ field_value('title') }}</textarea>
+
+        <label for="option_1">Option 1</label>
+        <input id="option_1" name="option_1" type="text" value="{{ field_value('option_1') }}" required>
+
+        <label for="option_2">Option 2</label>
+        <input id="option_2" name="option_2" type="text" value="{{ field_value('option_2') }}" required>
+
+        <label for="option_3">Option 3</label>
+        <input id="option_3" name="option_3" type="text" value="{{ field_value('option_3') }}" required>
+
+        <label for="option_4">Option 4</label>
+        <input id="option_4" name="option_4" type="text" value="{{ field_value('option_4') }}" required>
+
+        <label for="answer">Correct answer</label>
+        {% set current_answer = field_value('answer') or 'option_1' %}
+        <select id="answer" name="answer">
+            <option value="option_1" {% if current_answer == 'option_1' %}selected{% endif %}>Option 1</option>
+            <option value="option_2" {% if current_answer == 'option_2' %}selected{% endif %}>Option 2</option>
+            <option value="option_3" {% if current_answer == 'option_3' %}selected{% endif %}>Option 3</option>
+            <option value="option_4" {% if current_answer == 'option_4' %}selected{% endif %}>Option 4</option>
+        </select>
+
+        <label for="answer_desc">Explanation</label>
+        <textarea id="answer_desc" name="answer_desc">{{ field_value('answer_desc') }}</textarea>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                {% if mcq %}Save{% else %}Create{% endif %}
+            </button>
+            <a class="btn" href="{% if mcq %}{{ url_for('browse.mcq_detail', mcq_id=mcq.id) }}{% else %}{{ url_for('browse.qbank_detail', qbank_id=qbank.id) }}{% endif %}">Cancel</a>
+        </div>
+    </form>
+{% endblock %}

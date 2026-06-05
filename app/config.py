@@ -26,7 +26,7 @@ def _env_bool(key: str, default: bool) -> bool:
 settings = Settings(
     mongo_uri=os.getenv("MONGO_URI", "mongodb://localhost:27017"),
     mongo_db=os.getenv("MONGO_DB", "marrow_ito_search"),
-    flask_host=os.getenv("FLASK_HOST", "127.0.0.1"),
+    flask_host=os.getenv("FLASK_HOST", "0.0.0.0"),
     flask_port=int(os.getenv("FLASK_PORT", "5001")),
     flask_debug=_env_bool("FLASK_DEBUG", True),
 )

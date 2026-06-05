@@ -1,0 +1,363 @@
+# Medical synonyms for NEET-PG search (Marrow-ito-search)
+#
+# Format: comma-separated equivalence classes, one per line. All terms on a
+# line are treated as equivalent (symmetric expansion): a query for any
+# term on a line expands to the full set.
+#
+# Lines starting with `#` are comments. Blank lines are ignored.
+# Compatible with the OpenSearch / Solr synonyms.txt format so this file
+# ports forward without changes when we move to a real search engine.
+#
+# Editing rules:
+#   - Keep terms lower-case. Matching is case-insensitive at query time.
+#   - Do not include stop words (is, am, the, of, in, on, ...).
+#   - For ambiguous abbreviations (MS, AD, BPD), pick the most common
+#     NEET-PG meaning. Add the alternate as its own line only if needed.
+#   - Multi-word terms are OK ("ulcerative colitis"); the expander handles
+#     phrase matching.
+
+# === Cardiology ===
+mi, myocardial infarction, heart attack
+ami, acute myocardial infarction
+nstemi, non-st elevation myocardial infarction
+stemi, st elevation myocardial infarction
+acs, acute coronary syndrome
+cad, coronary artery disease, ischemic heart disease, ihd
+chf, congestive heart failure, hf, heart failure
+hfref, heart failure with reduced ejection fraction
+hfpef, heart failure with preserved ejection fraction
+af, atrial fibrillation, a fib, afib
+vf, ventricular fibrillation, v fib
+vt, ventricular tachycardia, v tach
+svt, supraventricular tachycardia
+pvc, premature ventricular contraction
+htn, hypertension, high blood pressure, high bp
+hdl, high density lipoprotein
+ldl, low density lipoprotein
+dvt, deep vein thrombosis, deep venous thrombosis
+pe, pulmonary embolism
+pad, peripheral arterial disease
+pvd, peripheral vascular disease
+rhd, rheumatic heart disease
+mr, mitral regurgitation
+ms, mitral stenosis
+as, aortic stenosis
+ar, aortic regurgitation
+tr, tricuspid regurgitation
+ts, tricuspid stenosis
+asd, atrial septal defect
+vsd, ventricular septal defect
+pda, patent ductus arteriosus
+tof, tetralogy of fallot
+ef, ejection fraction
+ecg, ekg, electrocardiogram, electrocardiography
+echo, echocardiogram, echocardiography
+
+# === Respiratory ===
+copd, chronic obstructive pulmonary disease
+ards, acute respiratory distress syndrome
+osa, obstructive sleep apnea, sleep apnea
+tb, tuberculosis
+ptb, pulmonary tuberculosis
+eptb, extrapulmonary tuberculosis
+mdr-tb, multidrug resistant tuberculosis
+xdr-tb, extensively drug resistant tuberculosis
+mtb, mycobacterium tuberculosis
+lrti, lower respiratory tract infection
+urti, upper respiratory tract infection
+cap, community acquired pneumonia
+hap, hospital acquired pneumonia
+vap, ventilator associated pneumonia
+pft, pulmonary function test
+pefr, peak expiratory flow rate
+fev1, forced expiratory volume in 1 second
+fvc, forced vital capacity
+ild, interstitial lung disease
+ipf, idiopathic pulmonary fibrosis
+sob, shortness of breath, dyspnea, breathlessness
+doe, dyspnea on exertion
+pnd, paroxysmal nocturnal dyspnea
+
+# === Endocrinology ===
+dm, diabetes mellitus, diabetes
+t1dm, type 1 diabetes mellitus, type 1 diabetes, iddm
+t2dm, type 2 diabetes mellitus, type 2 diabetes, niddm
+gdm, gestational diabetes mellitus
+dka, diabetic ketoacidosis
+hhs, hyperosmolar hyperglycemic state
+mody, maturity onset diabetes of the young
+hba1c, glycated hemoglobin, glycosylated hemoglobin
+tft, thyroid function test
+tsh, thyroid stimulating hormone
+t3, triiodothyronine
+t4, thyroxine
+pcos, pcod, polycystic ovary syndrome, polycystic ovarian disease
+siadh, syndrome of inappropriate antidiuretic hormone secretion
+di, diabetes insipidus
+gh, growth hormone
+acth, adrenocorticotropic hormone
+adh, antidiuretic hormone, vasopressin
+hpt, hyperparathyroidism
+
+# === Gastroenterology ===
+gerd, gastroesophageal reflux disease, acid reflux
+pud, peptic ulcer disease
+# IBD family — UC, CD, and IBD share content in NEET-PG syllabus
+uc, ulcerative colitis, ibd, inflammatory bowel disease, cd, crohn disease, crohns disease
+ibs, irritable bowel syndrome
+nafld, non-alcoholic fatty liver disease, fatty liver
+nash, non-alcoholic steatohepatitis
+ald, alcoholic liver disease
+hcc, hepatocellular carcinoma, liver cancer
+pbc, primary biliary cholangitis, primary biliary cirrhosis
+psc, primary sclerosing cholangitis
+gib, gastrointestinal bleeding, gi bleed
+ugib, upper gastrointestinal bleeding
+lgib, lower gastrointestinal bleeding
+ercp, endoscopic retrograde cholangiopancreatography
+mrcp, magnetic resonance cholangiopancreatography
+egd, esophagogastroduodenoscopy
+lft, liver function test
+ast, aspartate aminotransferase, sgot
+alt, alanine aminotransferase, sgpt
+alp, alkaline phosphatase
+ggt, gamma-glutamyl transferase
+
+# === Renal ===
+aki, acute kidney injury, acute renal failure, arf
+ckd, chronic kidney disease, chronic renal failure, crf
+esrd, end stage renal disease, eskd
+gn, glomerulonephritis
+rpgn, rapidly progressive glomerulonephritis
+nsx, nephrotic syndrome
+mn, membranous nephropathy
+mcd, minimal change disease
+fsgs, focal segmental glomerulosclerosis
+igan, iga nephropathy
+atn, acute tubular necrosis
+ain, acute interstitial nephritis
+adpkd, autosomal dominant polycystic kidney disease
+uti, urinary tract infection
+bph, benign prostatic hyperplasia, enlarged prostate
+ras, renal artery stenosis
+rft, kft, renal function test, kidney function test
+bun, blood urea nitrogen
+
+# === Neurology ===
+tia, transient ischemic attack
+cva, cerebrovascular accident, stroke
+ich, intracerebral hemorrhage
+sah, subarachnoid hemorrhage
+sdh, subdural hematoma, subdural hemorrhage
+edh, extradural hematoma, epidural hematoma
+multiple sclerosis, ms
+als, amyotrophic lateral sclerosis, motor neuron disease, mnd
+gbs, guillain barre syndrome
+mg, myasthenia gravis
+pd, parkinson disease, parkinsons disease
+alzheimers, alzheimer disease, alzheimers disease
+dmd, duchenne muscular dystrophy
+bmd, becker muscular dystrophy
+eeg, electroencephalogram
+emg, electromyography
+ncv, nerve conduction velocity
+lp, lumbar puncture
+csf, cerebrospinal fluid
+mmse, mini mental state examination
+gcs, glasgow coma scale
+
+# === Hematology / Oncology ===
+aml, acute myeloid leukemia, acute myelogenous leukemia
+all, acute lymphoblastic leukemia, acute lymphocytic leukemia
+cml, chronic myeloid leukemia, chronic myelogenous leukemia
+cll, chronic lymphocytic leukemia
+hl, hodgkin lymphoma, hodgkins lymphoma
+nhl, non-hodgkin lymphoma
+mm, multiple myeloma
+apml, apl, acute promyelocytic leukemia
+itp, immune thrombocytopenic purpura, idiopathic thrombocytopenic purpura
+ttp, thrombotic thrombocytopenic purpura
+hus, hemolytic uremic syndrome
+dic, disseminated intravascular coagulation
+vwd, von willebrand disease
+g6pd, glucose-6-phosphate dehydrogenase
+pnh, paroxysmal nocturnal hemoglobinuria
+mds, myelodysplastic syndrome
+mpn, myeloproliferative neoplasm
+ida, iron deficiency anemia
+acd, anemia of chronic disease
+mcv, mean corpuscular volume
+
+# === Infectious Disease ===
+hiv, human immunodeficiency virus
+aids, acquired immunodeficiency syndrome
+hbv, hepatitis b virus
+hcv, hepatitis c virus
+hav, hepatitis a virus
+hev, hepatitis e virus
+hsv, herpes simplex virus
+vzv, varicella zoster virus
+ebv, epstein barr virus
+cmv, cytomegalovirus
+hpv, human papillomavirus
+mrsa, methicillin resistant staphylococcus aureus
+vre, vancomycin resistant enterococcus
+esbl, extended spectrum beta lactamase
+pcp, pneumocystis pneumonia, pneumocystis jirovecii pneumonia
+covid, covid-19, coronavirus disease 2019, sars-cov-2
+
+# === OBGY ===
+pid, pelvic inflammatory disease
+prom, premature rupture of membranes
+pprom, preterm premature rupture of membranes
+pih, pregnancy induced hypertension
+hellp, hemolysis elevated liver enzymes low platelets
+iugr, intrauterine growth restriction, fgr, fetal growth restriction
+iufd, intrauterine fetal demise, fetal death
+art, assisted reproductive technology
+ivf, in vitro fertilization
+iui, intrauterine insemination
+lmp, last menstrual period
+edd, expected date of delivery
+edc, expected date of confinement
+pph, postpartum hemorrhage
+dub, dysfunctional uterine bleeding
+aub, abnormal uterine bleeding
+lscs, lower segment cesarean section
+nvd, normal vaginal delivery
+aph, antepartum hemorrhage
+
+# === Pediatrics ===
+nicu, neonatal intensive care unit
+picu, pediatric intensive care unit
+rds, respiratory distress syndrome, hyaline membrane disease, hmd
+hie, hypoxic ischemic encephalopathy
+ttn, transient tachypnea of the newborn
+mas, meconium aspiration syndrome
+nec, necrotizing enterocolitis
+rop, retinopathy of prematurity
+bpd, bronchopulmonary dysplasia
+sids, sudden infant death syndrome
+aom, acute otitis media
+ome, otitis media with effusion
+lbw, low birth weight
+vlbw, very low birth weight
+elbw, extremely low birth weight
+sga, small for gestational age
+lga, large for gestational age
+aga, appropriate for gestational age
+
+# === Drug classes ===
+nsaid, non-steroidal anti-inflammatory drug
+ppi, proton pump inhibitor
+h2ra, h2 blocker, histamine h2 receptor antagonist
+arb, angiotensin receptor blocker
+acei, ace inhibitor, angiotensin converting enzyme inhibitor
+bb, beta blocker, beta-blocker
+ccb, calcium channel blocker
+mra, mineralocorticoid receptor antagonist
+sglt2i, sodium-glucose cotransporter 2 inhibitor
+glp1, glp-1 agonist, glucagon-like peptide 1 receptor agonist
+dpp4, dpp-4 inhibitor, dipeptidyl peptidase 4 inhibitor
+ssri, selective serotonin reuptake inhibitor
+snri, serotonin norepinephrine reuptake inhibitor
+tca, tricyclic antidepressant
+maoi, monoamine oxidase inhibitor
+dmard, disease modifying antirheumatic drug
+tki, tyrosine kinase inhibitor
+
+# === Investigations / labs ===
+cbc, complete blood count
+dc, differential count
+esr, erythrocyte sedimentation rate
+crp, c-reactive protein
+pt, prothrombin time
+ptt, aptt, partial thromboplastin time, activated partial thromboplastin time
+inr, international normalized ratio
+abg, arterial blood gas
+ct, computed tomography, cat scan
+mri, magnetic resonance imaging
+us, usg, ultrasound, ultrasonography
+pet, positron emission tomography
+cxr, chest x-ray, chest radiograph
+kub, kidney ureter bladder
+
+# === Eye / ENT ===
+iop, intraocular pressure
+armd, amd, age-related macular degeneration
+dr, diabetic retinopathy
+poag, primary open-angle glaucoma
+pacg, primary angle-closure glaucoma
+bppv, benign paroxysmal positional vertigo
+csom, chronic suppurative otitis media
+npc, nasopharyngeal carcinoma
+
+# === Psychiatry ===
+mdd, major depressive disorder, depression
+gad, generalized anxiety disorder
+ptsd, post-traumatic stress disorder
+ocd, obsessive-compulsive disorder
+bipolar, bipolar disorder
+adhd, attention deficit hyperactivity disorder
+autism, autism spectrum disorder
+ect, electroconvulsive therapy
+cbt, cognitive behavioral therapy
+
+# === Dermatology / Rheumatology ===
+scc, squamous cell carcinoma
+bcc, basal cell carcinoma
+sle, systemic lupus erythematosus, lupus
+ra, rheumatoid arthritis
+sjs, stevens-johnson syndrome
+ten, toxic epidermal necrolysis
+atopic dermatitis, eczema
+
+# === Surgery / procedures ===
+icu, intensive care unit
+or, operating room, operation theatre, ot
+npo, nil per oral, nbm, nil by mouth
+iv, intravenous
+im, intramuscular
+sc, subcutaneous
+ng, nasogastric, ryles tube
+cpr, cardiopulmonary resuscitation
+rosc, return of spontaneous circulation
+icd, intercostal drainage, chest tube
+turp, transurethral resection of the prostate
+turbt, transurethral resection of bladder tumor
+rirs, retrograde intrarenal surgery
+pcnl, percutaneous nephrolithotomy
+eswl, extracorporeal shock wave lithotripsy
+lscs, c-section, cesarean section, cesarean delivery
+
+# === Clinical shorthand ===
+dx, diagnosis
+hx, history
+sx, symptoms
+rx, prescription, treatment
+tx, treatment
+fx, fracture
+yo, year-old, years old
+b/l, bilateral
+u/l, unilateral
+k/c/o, known case of
+c/o, complaints of, complaint of
+o/e, on examination
+s/p, status post
+
+# === Symptoms and signs (commonly typed shorthand) ===
+n/v, nausea and vomiting
+loc, loss of consciousness
+lbp, low back pain
+ho, history of
+
+# === Common Indian / UK / US spelling variants ===
+anaesthesia, anesthesia
+paediatrics, pediatrics
+orthopaedics, orthopedics
+foetus, fetus
+oedema, edema
+haemorrhage, hemorrhage
+diarrhoea, diarrhea
+caesarean, cesarean
+gynaecology, gynecology

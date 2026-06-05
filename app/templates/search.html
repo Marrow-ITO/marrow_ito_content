@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{% if q %}{{ q }} · Search{% else %}Search{% endif %} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        Search
+    </nav>
+
+    <h1 style="margin-bottom: 0.5rem;">Search</h1>
+
+    {% if q %}
+        <p style="color: #57606a; margin-top: 0;">
+            Results for <strong>{{ q }}</strong>
+            {% if selected_subject_name %}
+                in <strong>{{ selected_subject_name }}</strong>
+            {% endif %}
+        </p>
+    {% endif %}
+
+    <form method="get" action="{{ url_for('search.search_page') }}"
+          style="display:flex; gap:0.5rem; align-items:center; margin: 1rem 0;">
+        <input type="hidden" name="q" value="{{ q }}">
+        <label for="subject-filter" style="font-size:0.9rem; color:#57606a;">Subject:</label>
+        <select id="subject-filter" name="subject_id"
+                onchange="this.form.submit()"
+                style="padding: 0.3rem 0.5rem; border:1px solid #d0d7de; border-radius:6px;">
+            <option value="">All subjects</option>
+            {% for s in subjects %}
+                <option value="{{ s.id }}" {% if selected_subject_id == (s.id|string) %}selected{% endif %}>
+                    {{ s.name }}
+                </option>
+            {% endfor %}
+        </select>
+        {% if selected_subject_id %}
+            <a href="{{ url_for('search.search_page', q=q) }}"
+               style="font-size:0.85rem; color:#57606a;">clear filter</a>
+        {% endif %}
+    </form>
+
+    {% if q and results %}
+        <p style="color:#57606a; font-size:0.85rem;">
+            {{ results|length }} result{{ '' if results|length == 1 else 's' }} · keyword hits: {{ keyword_count }} · semantic hits: {{ semantic_count }}
+        </p>
+        <ul class="entity-list">
+            {% for r in results %}
+                <li>
+                    <div>
+                        <a href="{{ url_for('browse.lesson_detail', lesson_id=r.lesson_id) }}">
+                            {{ r.title }}
+                        </a>
+                        <span class="count-badge {% if not r.mcq_count %}zero{% endif %}">
+                            {{ r.mcq_count }} MCQ{{ '' if r.mcq_count == 1 else 's' }}
+                        </span>
+                    </div>
+                    <div class="meta" style="font-size:0.85rem; color:#57606a; margin-top:0.2rem;">
+                        <a href="{{ url_for('browse.subject_detail', subject_id=r.subject_id) }}"
+                           style="color:#57606a;">{{ r.subject_name }}</a>
+                        <span style="color:#8c959f;">›</span>
+                        <a href="{{ url_for('browse.topic_detail', topic_id=r.topic_id) }}"
+                           style="color:#57606a;">{{ r.topic_name }}</a>
+                    </div>
+                    {% if r.snippet %}
+                        <div style="margin-top:0.3rem; color:#1f2328; font-size:0.88rem;">
+                            {{ r.snippet }}
+                        </div>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif q %}
+        <p class="empty">No results for that query{% if selected_subject_name %} in {{ selected_subject_name }}{% endif %}.</p>
+    {% else %}
+        <p class="empty">Type a query in the search bar above to begin.</p>
+    {% endif %}
+
+    {% if q and expanded and expanded != q.lower() %}
+        <details style="margin-top:2rem; color:#57606a; font-size:0.8rem;">
+            <summary style="cursor:pointer;">Expanded query (debug)</summary>
+            <code style="display:block; padding:0.5rem; background:#f6f8fa; border-radius:4px; margin-top:0.3rem;">
+                {{ expanded }}
+            </code>
+        </details>
+    {% endif %}
+{% endblock %}

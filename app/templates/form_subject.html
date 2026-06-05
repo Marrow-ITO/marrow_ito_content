@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{% if subject %}Edit {{ subject.name }}{% else %}New subject{% endif %} · Marrow-ito-search{% endblock %}
+{% block content %}
+    <nav class="crumbs">
+        <a href="{{ url_for('browse.index') }}">Subjects</a>
+        <span class="sep">/</span>
+        {% if subject %}
+            <a href="{{ url_for('browse.subject_detail', subject_id=subject.id) }}">{{ subject.name }}</a>
+            <span class="sep">/</span> Edit
+        {% else %}
+            New
+        {% endif %}
+    </nav>
+    <h1>{% if subject %}Edit subject{% else %}New subject{% endif %}</h1>
+
+    <form method="post" class="form-block">
+        <label for="name">Subject name</label>
+        <input id="name" name="name" type="text" value="{{ name }}" autofocus required>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                {% if subject %}Save{% else %}Create{% endif %}
+            </button>
+            <a class="btn" href="{% if subject %}{{ url_for('browse.subject_detail', subject_id=subject.id) }}{% else %}{{ url_for('browse.index') }}{% endif %}">Cancel</a>
+        </div>
+    </form>
+{% endblock %}

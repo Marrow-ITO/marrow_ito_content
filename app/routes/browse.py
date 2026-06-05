@@ -7,6 +7,7 @@ from app.repositories import (
     SubjectRepo,
     TestRepo,
     TopicRepo,
+    VideoNoteRepo,
     VideoRepo,
 )
 
@@ -17,7 +18,14 @@ browse_bp = Blueprint("browse", __name__)
 @browse_bp.route("/")
 def index():
     subjects = SubjectRepo().list_all()
-    return render_template("index.html", subjects=subjects)
+    mcq_counts = MCQRepo().counts_by_subject()
+    video_counts = VideoRepo().counts_by_subject()
+    return render_template(
+        "index.html",
+        subjects=subjects,
+        mcq_counts=mcq_counts,
+        video_counts=video_counts,
+    )
 
 
 @browse_bp.route("/subjects/<subject_id>")
@@ -26,7 +34,15 @@ def subject_detail(subject_id: str):
     if not subject:
         abort(404)
     topics = TopicRepo().list_by_subject(subject_id)
-    return render_template("subject.html", subject=subject, topics=topics)
+    mcq_counts = MCQRepo().counts_by_topic(subject_id)
+    video_counts = VideoRepo().counts_by_topic(subject_id)
+    return render_template(
+        "subject.html",
+        subject=subject,
+        topics=topics,
+        mcq_counts=mcq_counts,
+        video_counts=video_counts,
+    )
 
 
 @browse_bp.route("/topics/<topic_id>")
@@ -36,8 +52,15 @@ def topic_detail(topic_id: str):
         abort(404)
     subject = SubjectRepo().get(topic.subject_id)
     lessons = LessonRepo().list_by_topic(topic_id)
+    mcq_counts = MCQRepo().counts_by_lesson(topic_id)
+    video_counts = VideoRepo().counts_by_lesson(topic_id)
     return render_template(
-        "topic.html", topic=topic, subject=subject, lessons=lessons
+        "topic.html",
+        topic=topic,
+        subject=subject,
+        lessons=lessons,
+        mcq_counts=mcq_counts,
+        video_counts=video_counts,
     )
 
 
@@ -50,6 +73,7 @@ def lesson_detail(lesson_id: str):
     subject = SubjectRepo().get(topic.subject_id) if topic else None
     qbanks = QBankRepo().list_by_lesson(lesson_id)
     videos = VideoRepo().list_by_lesson(lesson_id)
+    mcq_counts = MCQRepo().counts_by_qbank(lesson_id)
     return render_template(
         "lesson.html",
         lesson=lesson,
@@ -57,6 +81,7 @@ def lesson_detail(lesson_id: str):
         subject=subject,
         qbanks=qbanks,
         videos=videos,
+        mcq_counts=mcq_counts,
     )
 
 
@@ -106,12 +131,14 @@ def video_detail(video_id: str):
     lesson = LessonRepo().get(video.lesson_id)
     topic = TopicRepo().get(lesson.topic_id) if lesson else None
     subject = SubjectRepo().get(topic.subject_id) if topic else None
+    notes = VideoNoteRepo().list_by_video(video_id)
     return render_template(
         "video.html",
         video=video,
         lesson=lesson,
         topic=topic,
         subject=subject,
+        notes=notes,
     )
 
 

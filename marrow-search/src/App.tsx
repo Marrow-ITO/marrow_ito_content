@@ -7,6 +7,7 @@ import TestsTab from './components/tabs/TestsTab';
 import VideosTab from './components/tabs/VideosTab';
 import SearchExperience from './components/search/SearchExperience';
 import VideoPage from './components/video/VideoPage';
+import QBankPage from './components/qbank/QBankPage';
 import type { TabId, SearchResult } from './types';
 
 export default function App() {
@@ -27,12 +28,19 @@ export default function App() {
   return (
     <MobileFrame>
       {selectedResult !== null ? (
-        <VideoPage
-          result={selectedResult}
-          onBack={() => setSelectedResult(null)}
-          autoOpenNotes={selectedResult.type === 'note'}
-          initialNotesPage={selectedResult.type === 'note' ? selectedResult.page_no : undefined}
-        />
+        selectedResult.type === 'qbank' ? (
+          <QBankPage
+            result={selectedResult}
+            onBack={() => setSelectedResult(null)}
+          />
+        ) : (
+          <VideoPage
+            result={selectedResult}
+            onBack={() => setSelectedResult(null)}
+            autoOpenNotes={selectedResult.type === 'note'}
+            initialNotesPage={selectedResult.type === 'note' ? selectedResult.page_no : undefined}
+          />
+        )
       ) : searchOpen ? (
         <SearchExperience
           onClose={closeSearch}

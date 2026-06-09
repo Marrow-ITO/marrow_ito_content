@@ -24,7 +24,7 @@ const TYPE_META: Record<SearchResult['type'], {
 export default function ResultCard({ result, onResultClick }: Props) {
   const meta = TYPE_META[result.type];
   const TypeIcon = meta.Icon;
-  const isClickable = result.type === 'video' || result.type === 'timestamp' || result.type === 'note';
+  const isClickable = ['video', 'timestamp', 'note', 'qbank'].includes(result.type);
 
   return (
     <div

@@ -80,6 +80,29 @@ export type VideoApiResponse = {
   notes: NoteImage[];
 };
 
+export type MCQItem = {
+  id: string;
+  title: string;
+  options: string[];
+  answer: string;
+  answer_index: number;
+  answer_desc: string;
+};
+
+export type QBankApiResponse = {
+  id: string;
+  title: string;
+  lesson_name: string;
+  lesson_id: string;
+  subject_name: string;
+  subject_id: string;
+  topic_name: string;
+  topic_id: string;
+  mcq_count: number;
+  mcqs: MCQItem[];
+  thumbnail_url: string | null;
+};
+
 export type SuggestResponse = {
   query: string;
   suggestions: Suggestion[];
